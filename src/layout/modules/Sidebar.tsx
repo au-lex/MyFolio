@@ -1,6 +1,6 @@
 import React from 'react';
 // Imports for Left Sidebar
-import { Eye, ArrowUp2, Home2, Briefcase, Sms } from 'iconsax-react';
+import { Eye, ArrowUp2 } from 'iconsax-react';
 import { DesktopNavItem } from '../../Components/ui/NavItems';
 
 // Imports for Right Sidebar
