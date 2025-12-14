@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+
+@theme {
+
+  --color-pri: #050505;   
+  --color-sec: rgb(102, 102, 102);  
+
+  --color-accent: #19191A;    
+  --color-card: #0A0A0B; 
+  --color-text: #111827;      
+  --color-border: #e5e7eb;   
+      
+  --color-overlay: rgba(0, 0, 0, 0.5); 
+
+
+    /* 🔤 Fonts */
+    --font-sans: "Raleway", sans-serif;
+    --font-serif: "Lato", sans-serif;
+
+}
+
+
+
+
+
+
+@layer base {
+
+  h1, h2, h3, h4, h5, h6, span, div {
+    @apply font-sans text-gray-800;
+  }
+  
+  p {
+    @apply text-gray-700 leading-relaxed mb-4 font-serif;
+  }
+  
+  a {
+    @apply  hover:text-blue-800 underline font-sans;
+  }
+}
+
+
+.animation-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
