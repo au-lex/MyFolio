@@ -4,20 +4,20 @@ import HeroSection from './Hero'
 import MyStacks from './MyStack'
 import { Projects } from './Project'
 import { Experience } from './Experience'
-// import { Services } from './Services'
+import { Services } from './Services'
 
 const Landing: React.FC = () => {
   return (
     <>
       <Layout>
-        <section className='lg:max-w-5xl w-full space-y-16 mx-auto'>
+        <div className='lg:max-w-4xl w-full space-y-16 mx-auto'>
 
 <HeroSection />
 <Experience />
-{/* <Services /> */}
-<Projects />
 <MyStacks />
-        </section>
+<Services />
+<Projects />
+        </div>
       </Layout>
     </>
   )
