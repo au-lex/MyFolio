@@ -35,9 +35,7 @@
     @apply text-gray-700 leading-relaxed mb-4 font-serif;
   }
   
-  a {
-    @apply  hover:text-blue-800 underline font-sans;
-  }
+
 }
 
 

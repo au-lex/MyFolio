@@ -12,10 +12,10 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
 const HeroSection: React.FC = () => {
   return (
     <section className="min-h-screen bg-black text-white flex flex-col items-center pt-[2rem] md:pt-[4rem] ">
-      <section className="w-full max-w-5xl space-y-12">
+      <section className="w-full  space-y-12">
         
     
-        <section className=" mx-auto lg:max-w-none lg:flex lg:items-start lg:gap-10 lg:border-none lg:bg-transparent">
+        <section className=" mx-auto lg:max-w-none lg:flex lg:items-start lg:border-none lg:bg-transparent">
           
           {/* HEADER (Mobile: Image + Name side-by-side) */}
           <section className="flex flex-row lg:flex-col items-center lg:items-start gap-5 mb-6 lg:mb-0 lg:w-1/3">
@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
           </section>
 
           {/* CONTENT (Bio + Buttons) */}
-          <section className="flex-1 text-left space-y-6 lg:mt-4">
+          <section className="flex-1 text-left space-y-6 ">
             
             {/* Desktop Only Header (Hidden on Mobile) */}
             <section className="hidden lg:block space-y-2">
@@ -56,7 +56,7 @@ const HeroSection: React.FC = () => {
             </section>
             
             {/* Bio Text */}
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed text-bkalance">
               Full Stack Engineer specializing in scalable web and mobile applications.
               I architect solutions using the MERN stack and Golang, with a focus on shipping 
               production ready products.

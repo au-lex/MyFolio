@@ -8,7 +8,7 @@ import { Instagram, Global, CloseCircle } from 'iconsax-react';
 import { SocialButton } from '../../Components/ui/SocialButton';
 
 interface SidebarsProps {
-  navLinks: Array<{ path: string; label: string; icon: any }>;
+  navLinks: Array<{ path: string; label: string; icon:React.ElementType }>;
 }
 
 export const Sidebars: React.FC<SidebarsProps> = ({ navLinks }) => {
