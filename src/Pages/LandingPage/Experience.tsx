@@ -100,7 +100,7 @@ export const Experience: React.FC = () => {
                 </div>
 
                 {/* Details Card */}
-                <div className="flex-1 bg-zinc-900/30 border border-zinc-800 p-6 rounded-2xl hover:bg-zinc-900/50 hover:border-zinc-700 transition-all duration-300">
+                <div className="flex-1 bg-card border border-zinc-800 p-6 rounded-2xl hover:bg-zinc-900/50 hover:border-zinc-700 transition-all duration-300">
                     
                     {/* Header: Role & Company */}
                     <div className="flex justify-between items-start mb-4">

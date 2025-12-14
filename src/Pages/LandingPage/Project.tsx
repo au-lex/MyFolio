@@ -64,13 +64,13 @@ export const Projects: React.FC = () => {
           {projectsData.map((project) => (
             <div 
               key={project.id} 
-              // Layout: Column on mobile, Row on Large Screens
+     
               className="group flex flex-col lg:flex-row bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 rounded-2xl overflow-hidden transition-all duration-300"
             >
               
   
               <div className="w-full lg:w-[45%] h-64 lg:h-auto relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/10 z-10" /> {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-black/20 z-10" /> 
                   
                   <img 
                     src={project.image} 
@@ -94,19 +94,11 @@ export const Projects: React.FC = () => {
                     rel="noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-full text-zinc-300 text-sm font-medium transition-colors w-fit"
                   >
-                    <Link size={16} />
+                    <Link size={16} color='currentColor' />
                     {project.domain}
                   </a>
                 </div>
 
-                {/* Metadata Row */}
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-zinc-500 text-sm font-medium mb-6">
-                   <span>{project.category}</span>
-                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-                   <span>{project.stats}</span>
-                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-                   <span>{project.theme}</span>
-                </div>
 
                 {/* Description */}
                 <p className="text-zinc-400 leading-relaxed mb-8">
@@ -135,7 +127,7 @@ export const Projects: React.FC = () => {
         {/* --- FOOTER BUTTON --- */}
         <button className="w-full py-6 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:bg-zinc-800 text-zinc-400 hover:text-white flex items-center justify-center gap-2 text-sm font-bold tracking-widest uppercase transition-all">
           View All Projects
-          <ArrowRight size={18} />
+          <ArrowRight size={18} color='currentColor' />
         </button>
 
       </div>

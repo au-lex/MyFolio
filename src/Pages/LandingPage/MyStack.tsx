@@ -37,7 +37,7 @@ const stackItems: StackItem[] = [
 ];
 
 const StackCard: React.FC<StackItem> = ({ name, icon: Icon, color }) => (
-  <div className="flex items-center justify-between p-4 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:bg-zinc-800 transition-all duration-300 group cursor-pointer">
+  <div className="flex items-center justify-between p-4  bg-card border border-zinc-800 rounded-xl hover:bg-zinc-800 transition-all duration-300 group cursor-pointer">
     <div className="flex items-center gap-4">
       {/* Icon Container */}
       <div className="w-10 h-10 rounded-lg bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:border-zinc-700 transition-colors">

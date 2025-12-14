@@ -17,8 +17,8 @@ const HeroSection: React.FC = () => {
     
         <section className=" mx-auto lg:max-w-none lg:flex lg:items-start lg:border-none lg:bg-transparent">
           
-          {/* HEADER (Mobile: Image + Name side-by-side) */}
-          <section className="flex flex-row lg:flex-col items-center lg:items-start gap-5 mb-6 lg:mb-0 lg:w-1/3">
+
+          <section className="flex flex-row lg:flex-col items-center lg:items-start gap-5  mb-6 lg:mb-0 lg:w-1/3">
             
             {/* Image Container */}
             <section className="w-24 h-24 sm:w-28 sm:h-28 lg:w-[18rem] lg:h-[18rem] shrink-0 rounded-2xl overflow-hidden relative shadow-2xl border border-white/5">
@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
               />
             </section>
 
-            {/* Name/Intro (Visible here on Mobile, but we structure it to flow naturally) */}
+     
             <section className="lg:hidden flex flex-col items-start">
                <section className="flex items-center gap-2 text-yellow-400 text-sm font-medium mb-1">
                 <span className="text-lg">👋</span>
@@ -64,12 +64,12 @@ const HeroSection: React.FC = () => {
 
             {/* Action Buttons - Stacked on Mobile, Row on Desktop */}
             <section className="flex flex-col sm:flex-row gap-3 pt-2">
-              <button className="flex items-center justify-center gap-3 px-6 py-4 bg-[#111] hover:bg-[#222] border border-white/10 rounded-xl text-white font-medium transition-all active:scale-95">
+              <button className="flex items-center justify-center gap-3 px-6 py-4 bg-card hover:bg-[#222] border border-white/10 rounded-xl text-white font-medium transition-all active:scale-95">
                 <Mail size={18} />
                 <span className='text-white'>EMAIL ME</span>
               </button>
               
-              <button className="flex items-center justify-center gap-3 px-6 py-4 bg-[#111] hover:bg-[#222] border border-white/10 rounded-xl text-white font-medium transition-all active:scale-95">
+              <button className="flex items-center justify-center gap-3 px-6 py-4 bg-card hover:bg-[#222] border border-white/10 rounded-xl text-white font-medium transition-all active:scale-95">
                 <Calendar size={18} />
                 <span className='text-white'>SCHEDULE CALL</span>
               </button>

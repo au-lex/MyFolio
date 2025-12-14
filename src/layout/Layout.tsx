@@ -53,12 +53,6 @@ const Layout: React.FC<PortfolioLayoutProps> = ({ children }) => {
               &copy; {new Date().getFullYear()} Aulex. All Rights Reserved.
             </p>
 
-            {/* Optional Footer Links */}
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-zinc-300 text-zinc-100 transition-colors">Twitter</a>
-              <a href="#" className="hover:text-zinc-300 text-zinc-100 transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-zinc-300  text-zinc-100 transition-colors">Github</a>
-            </div>
 
           </div>
         </footer>
