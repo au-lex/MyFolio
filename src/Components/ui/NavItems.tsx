@@ -36,7 +36,7 @@ export const MobileNavItem: React.FC<NavItemProps> = ({ to, icon: Icon, label, o
         className={({ isActive }) => `
             flex items-center gap-4 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300
             ${isActive 
-                ? 'bg-white text-black shadow-lg shadow-white/5' 
+                ? ' text-white' 
                 : 'text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300'
             }
         `}
