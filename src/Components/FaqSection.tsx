@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Add, Minus, MessageQuestion } from 'iconsax-react';
+import { Add, Minus, Computing } from 'iconsax-react';
 
 // --- Types ---
 interface FaqItemType {
@@ -11,50 +11,76 @@ interface FaqItemType {
 const faqData: FaqItemType[] = [
   { 
     question: "Can you work with clients remotely?", 
-    answer: "Absolutely! I work with clients all over the world using tools like Zoom, Slack, and Figma to ensure seamless communication." 
+    answer: "Absolutely. I operate effectively across all time zones using asynchronous communication protocols (Slack, Jira) and live syncs via Zoom to ensure seamless project integration." 
   },
   { 
     question: "Will my website be mobile-friendly?", 
-    answer: "Yes, every website I build is fully responsive, ensuring it looks perfect on mobile phones, tablets, and desktops." 
+    answer: "Affirmative. Mobile responsiveness is a core requirement. Every interface is engineered to adapt fluidly across mobile, tablet, and desktop viewports." 
   },
   { 
     question: "How long does it typically take to complete a project?", 
-    answer: "Timeline depends on complexity. A standard landing page takes 3-5 days, while a full website may take 2-4 weeks." 
+    answer: "Timeline varies by complexity. Standard deployment for landing pages is 3-5 days. Full-stack architectural overhauls typically require 2-4 weeks for production readiness." 
   },
   { 
-    question: "Can you integrate third-party tools into my website?", 
-    answer: "Yes, I can integrate tools like Mailchimp, Google Analytics, Stripe, Zapier, and more." 
+    question: "Can you integrate third-party tools?", 
+    answer: "Yes. I implement robust API integrations for payment gateways (Stripe), analytics (Google), CRM systems, and headless CMS solutions." 
   },
   { 
-    question: "Do you offer website maintenance?", 
-    answer: "I offer monthly maintenance packages to keep your site secure, updated, and running smoothly." 
+    question: "Do you offer system maintenance?", 
+    answer: "I provide ongoing maintenance packages including security patches, dependency updates, and server monitoring to ensure 99.9% uptime." 
   },
 ];
 
 // --- Single FAQ Item Component ---
-const FaqItem: React.FC<{ item: FaqItemType }> = ({ item }) => {
+const FaqItem: React.FC<{ item: FaqItemType; index: number }> = ({ item, index }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div 
       onClick={() => setIsOpen(!isOpen)}
-      className={`border border-zinc-800 rounded-xl bg-zinc-900/20 overflow-hidden transition-all cursor-pointer ${isOpen ? 'bg-zinc-900/40 border-zinc-700' : 'hover:border-zinc-700'}`}
+      className={`group relative border rounded-sm overflow-hidden transition-all duration-300 cursor-pointer ${
+        isOpen 
+          ? 'bg-zinc-900/40 border-purple-500/50' 
+          : 'bg-zinc-900/10 border-zinc-800 hover:border-zinc-600'
+      }`}
     >
-      <div className="flex items-center justify-between p-5">
-        <span className={`font-medium text-sm md:text-base pr-4 transition-colors ${isOpen ? 'text-white' : 'text-zinc-300'}`}>
-          {item.question}
-        </span>
-        <div className={`w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-center transition-colors ${isOpen ? 'bg-white text-black' : 'bg-zinc-900 border border-zinc-800 text-zinc-500'}`}>
-          {isOpen ? <Minus size={16} /> : <Add size={16} />}
+      {/* Active State Indicator Strip */}
+      {isOpen && <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-purple-500" />}
+
+      <div className="flex items-start justify-between p-5 gap-4">
+        <div className="flex flex-col gap-1">
+            {/* Index Number */}
+            <span className={`text-[10px] font-mono font-bold transition-colors ${isOpen ? 'text-purple-400' : 'text-zinc-600'}`}>
+                {(index + 1).toString().padStart(2, '0')} // QUERY
+            </span>
+            
+            {/* Question */}
+            <h3 className={`font-bold text-sm md:text-base transition-colors ${isOpen ? 'text-white' : 'text-zinc-300 group-hover:text-white'}`}>
+                {item.question}
+            </h3>
+        </div>
+
+        {/* Toggle Button */}
+        <div className={`w-6 h-6 flex-shrink-0 rounded-sm flex items-center justify-center border transition-all mt-1 ${
+            isOpen 
+             ? 'bg-purple-500 border-purple-500 text-white' 
+             : 'bg-zinc-950 border-zinc-800 text-zinc-500 group-hover:border-zinc-500 group-hover:text-white'
+        }`}>
+          {isOpen ? <Minus size={14} /> : <Add size={14} />}
         </div>
       </div>
       
       {/* Animated Answer Area */}
       <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
         <div className="overflow-hidden">
-          <p className="p-5 pt-0 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800/50 mt-2">
-            {item.answer}
-          </p>
+          <div className="p-5 pt-0">
+             <div className="border-t border-zinc-800/50 pt-4">
+                <p className="text-zinc-400 text-sm leading-relaxed font-light">
+                    <span className="text-purple-500 font-mono text-xs mr-2">{'>'}</span>
+                    {item.answer}
+                </p>
+             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -65,19 +91,22 @@ const FaqItem: React.FC<{ item: FaqItemType }> = ({ item }) => {
 const FaqSection: React.FC = () => {
   return (
     <div className="w-full">
-      <div className="mb-8">
+      {/* HEADER */}
+      <div className="mb-10">
         <div className="flex items-center gap-3 mb-2">
-          <MessageQuestion size={28} variant="Bold" color='currentColor' className="text-white" />
-          <h2 className="text-2xl font-bold text-white">Common Queries</h2>
+          <Computing size={24} variant="Bold" className="text-zinc-600" />
+          <h2 className="text-2xl font-black text-white uppercase tracking-tighter">System_FAQ</h2>
         </div>
-        <p className="text-zinc-400">
-          Answers to your questions, simply put.
+        <div className="h-[1px] w-12 bg-purple-500 mb-4" />
+        <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest">
+          // Common Protocols & Inquiries
         </p>
       </div>
 
-      <div className="flex flex-col gap-4">
+      {/* LIST */}
+      <div className="flex flex-col gap-3">
         {faqData.map((item, index) => (
-          <FaqItem key={index} item={item} />
+          <FaqItem key={index} index={index} item={item} />
         ))}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 // Imports for Left Sidebar
-import { Eye, ArrowUp2 } from 'iconsax-react';
+import {  ArrowUp2 } from 'iconsax-react';
 import { DesktopNavItem } from '../../Components/ui/NavItems';
 
 // Imports for Right Sidebar
@@ -17,9 +17,7 @@ export const Sidebars: React.FC<SidebarsProps> = ({ navLinks }) => {
       {/* --- LEFT SIDEBAR --- */}
       <aside className="hidden xl:flex fixed left-0 top-0 h-screen w-[100px] flex-col justify-between items-center py-8 z-30 bg-black border-r border-zinc-800">
         <div className="flex flex-col gap-6 items-center">
-           <div className="w-10 h-10 flex items-center justify-center">
-               <Eye size={28} variant="Bold" color='currentColor' className="text-white" />
-           </div>
+   
         </div>
 
         <nav className="flex flex-col gap-6">

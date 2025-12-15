@@ -133,16 +133,16 @@ interface StackItem {
 const stackItems: StackItem[] = [
   { name: 'React.js', icon: SiReact, color: 'text-cyan-400' },
   { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+  { name: 'Golang', icon: SiGo, color: 'text-cyan-500' },
+  { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400' },
   { name: 'React Native', icon: SiReact, color: 'text-cyan-400' },
+  { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-300' },
+  { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-500' },
+  { name: 'Express.js', icon: SiExpress, color: 'text-gray-300' },
   { name: 'CSS3', icon: SiCss3, color: 'text-blue-500' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-300' },
   { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-400' },
-  { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400' },
-  { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-500' },
-  { name: 'Express.js', icon: SiExpress, color: 'text-gray-300' },
-  { name: 'Golang', icon: SiGo, color: 'text-cyan-500' },
   { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500' },
-  { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-300' },
 ];
 
 interface StackCardProps extends StackItem {
@@ -150,7 +150,7 @@ interface StackCardProps extends StackItem {
 }
 
 const StackCard: React.FC<StackCardProps> = ({ name, icon: Icon, color, index }) => (
-  <div className="group relative flex items-center gap-4 p-4 bg-zinc-900/20 border border-zinc-800 rounded-sm hover:border-zinc-600 hover:bg-zinc-900/60 transition-all duration-300 cursor-default">
+  <div className="group relative flex items-center gap-4 p-4 bg-card border border-zinc-800 rounded-sm hover:border-zinc-600 hover:bg-zinc-900/60 transition-all duration-300 cursor-default">
     
     {/* Tech Index Number (e.g., 01, 02) */}
     <div className="absolute top-2 right-2 text-[9px] font-mono text-zinc-700 group-hover:text-zinc-500 transition-colors">

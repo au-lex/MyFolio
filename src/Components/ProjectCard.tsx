@@ -34,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     >
       {/* 1. Image Section */}
       <div className="w-full lg:w-[35%] h-64 lg:h-auto relative overflow-hidden bg-zinc-950 border-r border-zinc-800">
-        <div className="absolute inset-0 bg-zinc-900/20 z-10" />
+        <div className="absolute inset-0 bg-card z-10" />
         <img 
           src={project.image} 
           alt={project.title} 
