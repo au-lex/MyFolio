@@ -17,9 +17,16 @@
     /* 🔤 Fonts */
     --font-sans: "Raleway", sans-serif;
     --font-serif: "Lato", sans-serif;
+    --font-mono: "Montserrat", sans-serif;
+    --font-space: "Space Grotesk", sans-serif;
+
 
 }
 
+
+body {
+  /* font-family:  */
+}
 
 
 
@@ -28,11 +35,11 @@
 @layer base {
 
   h1, h2, h3, h4, h5, h6, span, div {
-    @apply font-sans text-gray-800;
+    @apply font-space;
   }
   
   p {
-    @apply text-gray-700 leading-relaxed mb-4 font-serif;
+    @apply font-space;
   }
   
 
