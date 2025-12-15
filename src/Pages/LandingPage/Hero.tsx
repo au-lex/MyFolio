@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail, Calendar } from 'lucide-react';
 
-// Reusable Stat Component
+
 const StatItem = ({ value, label }: { value: string; label: string }) => (
   <section className="flex flex-col items-center justify-center text-center">
     <span className="text-2xl md:text-4xl font-bold text-white mb-2">{value}</span>
