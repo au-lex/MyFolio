@@ -159,15 +159,26 @@ interface ExperienceItem {
 
 const experienceData: ExperienceItem[] = [
   {
+    id: 0, 
+    company: "Orbit Systems",
+    website: "orbit.sys",
+    type: "AI Infrastruc",
+    logoLetter: "O",
+    date: "2025 - Present",
+    role: "Lead Software Dev",
+    description: "Spearheading the migration of legacy monoliths to event-driven microservices. Leading a team of 8 engineers to build AI-powered data pipelines using Golang and gRPC.",
+    isCurrent: true
+  },
+  {
     id: 1,
     company: "Vortex",
     website: "vortex.tech",
     type: "Fintech",
     logoLetter: "V",
-    date: "2023 - Present",
+    date: "2023 - 2025",
     role: "Senior Frontend Engineer",
-    description: "Architecting scalable React applications using Next.js. Improved site performance by 40% through server-side rendering and code splitting strategies.",
-    isCurrent: true
+    description: "Architected scalable React applications using Next.js. Improved site performance by 40% through server-side rendering and code splitting strategies.",
+    isCurrent: false
   },
   {
     id: 2,
