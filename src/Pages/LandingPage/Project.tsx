@@ -1,31 +1,23 @@
 import React from 'react';
-import { Flash, Link, ArrowRight } from 'iconsax-react';
+import { Flash, ArrowRight, } from 'iconsax-react';
 import { SiReact, SiTailwindcss, SiTypescript, SiNodedotjs, SiMongodb, SiNextdotjs, SiFigma } from 'react-icons/si';
 
-interface Project {
-  id: number;
-  title: string;
-  link: string;
-  domain: string;
-  category: string;
-  stats: string;
-  theme: string;
-  description: string;
-  image: string; // URL to the image
-  technologies: React.ElementType[];
-}
+
+import ProjectCard, { type Project } from '../../Components/ProjectCard'; 
+
 
 const projectsData: Project[] = [
   {
     id: 1,
     title: "Devcraft Portfolio",
     link: "https://devcraft.com",
+    caseStudyLink: "/projects/devcraft", 
     domain: "devcraft.com",
+    type: "Web",
     category: "Portfolio",
-    stats: "4 Pages",
-    theme: "Dark Theme",
+    year: "2024", 
+    version: "v2.0", 
     description: "A high-performance personal portfolio showcasing expertise, passion, and innovation. Built with modern animations and strict TypeScript typing.",
-    // Placeholder image from Unsplash (Replace with your local path e.g., "/images/project1.png")
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop", 
     technologies: [SiReact, SiTypescript, SiTailwindcss, SiFigma]
   },
@@ -33,102 +25,66 @@ const projectsData: Project[] = [
     id: 2,
     title: "Zenith Fitness App",
     link: "https://zenith.com",
+    caseStudyLink: "/projects/zenith", 
     domain: "zenith.com",
+    type: "Web",
     category: "Fitness SaaS",
-    stats: "Dashboard",
-    theme: "Light Theme",
+    year: "2023",
+    version: "v1.1", 
     description: "Empowering fitness enthusiasts with an immersive online experience. Features include workout tracking, nutrition planning, and live progress analytics.",
-    // Placeholder image from Unsplash
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop",
     technologies: [SiNextdotjs, SiMongodb, SiNodedotjs, SiTailwindcss]
-  }
+  },
+  {
+    id: 3,
+    title: "NEXUS MOBILE",
+    link: "#",
+    caseStudyLink: "/projects/nexus",
+    domain: "App Store",
+    type: "Mobile",
+    category: "iOS / Android",
+    year: "2023",
+    version: "Beta",
+    description: "Mobile dashboard for managing e-commerce analytics on the go. Built with React Native for cross-platform performance.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    technologies: [SiNextdotjs, SiMongodb, SiNodedotjs, SiTailwindcss]
+  },
 ];
 
 export const Projects: React.FC = () => {
   return (
-    <section className="">
-      <div className=" mx-auto flex flex-col gap-12">
+    <section className="text-white">
+      <div className="mx-auto flex flex-col gap-10">
      
-        <div>
-          <div className="flex items-center gap-3 mb-4">
-            <Flash size={28} variant="Bold" color='currentColor' className="text-white" />
-            <h2 className="text-3xl font-bold text-white">My Projects</h2>
+        {/* --- SHARP HEADER --- */}
+        <div className="border-l-2 border-purple-500 pl-6 py-2">
+          <div className="flex items-center gap-3 mb-2">
+            <Flash size={24} variant="Bold" color='#fff' className="text-purple-500" />
+            <h2 className="text-3xl font-black uppercase tracking-tighter text-white">Selected_Works</h2>
           </div>
-          <p className="text-zinc-400 max-w-2xl text-lg">
-            Explore a collection of my most innovative and visually stunning design and development works.
+          <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">
+            // Curated Deployments & Case Studies
           </p>
         </div>
 
-        {/* --- PROJECT LIST --- */}
+      
         <div className="flex flex-col gap-8">
           {projectsData.map((project) => (
-            <div 
-              key={project.id} 
-     
-              className="group flex flex-col lg:flex-row bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 rounded-2xl overflow-hidden transition-all duration-300"
-            >
-              
-  
-              <div className="w-full lg:w-[45%] h-64 lg:h-auto relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 z-10" /> 
-                  
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                  />
-              </div>
-
-              {/* 2. PROJECT CONTENT */}
-              <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
-                
-                {/* Header: Title + Link Button */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-full text-zinc-300 text-sm font-medium transition-colors w-fit"
-                  >
-                    <Link size={16} color='currentColor' />
-                    {project.domain}
-                  </a>
-                </div>
-
-
-                {/* Description */}
-                <p className="text-zinc-400 leading-relaxed mb-8">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack Row */}
-                <div className="mt-auto pt-6 border-t border-zinc-800/50">
-                    <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3">
-                        Built With
-                    </p>
-                    <div className="flex flex-wrap items-center gap-3">
-                        {project.technologies.map((TechIcon, idx) => (
-                            <div key={idx} className="p-2 rounded-lg bg-zinc-800/50 border border-zinc-700/50 text-zinc-300 group-hover:text-white group-hover:border-zinc-600 transition-all">
-                                <TechIcon size={18} />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-              </div>
-            </div>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        {/* --- FOOTER BUTTON --- */}
-        <button className="w-full py-6 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:bg-zinc-800 text-zinc-400 hover:text-white flex items-center justify-center gap-2 text-sm font-bold tracking-widest uppercase transition-all">
-          View All Projects
-          <ArrowRight size={18} color='currentColor' />
-        </button>
+        {/* --- SYSTEM FOOTER BUTTON --- */}
+        <div className="pt-4">
+            <button className="group w-full py-6 bg-zinc-900/20 border border-zinc-800 hover:bg-zinc-900 hover:border-zinc-600 rounded-sm flex items-center justify-center gap-3 transition-all duration-300">
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-500 group-hover:text-white transition-colors">
+                    Access_Full_Directory
+                </span>
+                <div className="bg-zinc-800 p-1 group-hover:bg-purple-500 transition-colors rounded-sm">
+                    <ArrowRight size={14} className="text-zinc-400 group-hover:text-white" />
+                </div>
+            </button>
+        </div>
 
       </div>
     </section>
