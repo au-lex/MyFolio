@@ -1,55 +1,10 @@
 import React from 'react';
 import { Flash, ArrowRight, } from 'iconsax-react';
-import { SiReact, SiTailwindcss, SiTypescript, SiNodedotjs, SiMongodb, SiNextdotjs, SiFigma } from 'react-icons/si';
+// import { SiReact, SiTailwindcss, SiTypescript, SiNodedotjs, SiMongodb, SiNextdotjs, SiFigma } from 'react-icons/si';
 
 
-import ProjectCard, { type Project } from '../../Components/ProjectCard'; 
-
-
-const projectsData: Project[] = [
-  {
-    id: 1,
-    title: "Devcraft Portfolio",
-    link: "https://devcraft.com",
-    caseStudyLink: "/projects/devcraft", 
-    domain: "devcraft.com",
-    type: "Web",
-    category: "Portfolio",
-    year: "2024", 
-    version: "v2.0", 
-    description: "A high-performance personal portfolio showcasing expertise, passion, and innovation. Built with modern animations and strict TypeScript typing.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop", 
-    technologies: [SiReact, SiTypescript, SiTailwindcss, SiFigma]
-  },
-  {
-    id: 2,
-    title: "Zenith Fitness App",
-    link: "https://zenith.com",
-    caseStudyLink: "/projects/zenith", 
-    domain: "zenith.com",
-    type: "Web",
-    category: "Fitness SaaS",
-    year: "2023",
-    version: "v1.1", 
-    description: "Empowering fitness enthusiasts with an immersive online experience. Features include workout tracking, nutrition planning, and live progress analytics.",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop",
-    technologies: [SiNextdotjs, SiMongodb, SiNodedotjs, SiTailwindcss]
-  },
-  {
-    id: 3,
-    title: "NEXUS MOBILE",
-    link: "#",
-    caseStudyLink: "/projects/nexus",
-    domain: "App Store",
-    type: "Mobile",
-    category: "iOS / Android",
-    year: "2023",
-    version: "Beta",
-    description: "Mobile dashboard for managing e-commerce analytics on the go. Built with React Native for cross-platform performance.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-    technologies: [SiNextdotjs, SiMongodb, SiNodedotjs, SiTailwindcss]
-  },
-];
+import ProjectCard from '../../Components/ProjectCard';
+import { projectsData } from '../../Data/ProjectData';
 
 export const Projects: React.FC = () => {
   return (
