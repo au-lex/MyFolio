@@ -31,9 +31,9 @@ export interface Project {
   gallery: string[];
 }
 
-// 2. The Data Array
+
 export const projectsData: Project[] = [
-  // --- WEB PROJECTS ---
+
 
   {
     id: 1,
@@ -72,7 +72,7 @@ export const projectsData: Project[] = [
     title: "Xnria",
     subtitle: "Fashion Tech Marketplace & Order Management System",
     category: "E-commerce / Marketplace",
-    banner: "/images/xnria-banner.jpg",
+    banner: "https://media.licdn.com/dms/image/v2/D4D22AQH1nI1K9hWNEQ/feedshare-shrink_800/B4DZrYXsKCIAAg-/0/1764566695635?e=1768435200&v=beta&t=TEoS7szkN8scmeN_r5Sjajy27D-GAfeprNxNqmrqBY8",
     liveLink: "https://xnria.com",
     repoLink: "https://github.com/yourusername/xnria",
     client: "Startup Venture",
@@ -95,8 +95,8 @@ export const projectsData: Project[] = [
       "Inventory & Sales Analytics"
     ],
     gallery: [
-      "/images/xnria-shop.jpg",
-      "/images/xnria-feed.jpg"
+      "https://media.licdn.com/dms/image/v2/D4D22AQETCm3qzQuGcA/feedshare-shrink_800/B4DZrYXsKSHsAg-/0/1764566698054?e=1768435200&v=beta&t=w-GWteGzS4Z3AecrZyf7kF0surezm16PjNAU5mfjzjU",
+      "https://media.licdn.com/dms/image/v2/D4D22AQH26ALyxMZsVg/feedshare-shrink_800/B4DZrYXsJ_IkAg-/0/1764566694350?e=1768435200&v=beta&t=ltC0zm38TykuF70xr05F9j-60U2i1KmA4Qww4AUl5KI"
     ]
   },
   {
@@ -104,8 +104,8 @@ export const projectsData: Project[] = [
     title: "Casalink",
     subtitle: "Multi-Tenant Property Management System (PMS)",
     category: "PropTech / SaaS",
-    banner: "/images/casalink-banner.jpg",
-    liveLink: "https://casalink.com",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766796252/Screenshot_from_2025-12-27_01-43-28_emdkgr.png",
+    liveLink: "https://casalink.app/login",
     repoLink: "https://github.com/yourusername/casalink",
     client: "Real Estate Enterprise",
     timeline: "2 Months",
@@ -126,8 +126,11 @@ export const projectsData: Project[] = [
       "Multi-property Portfolio Dashboard"
     ],
     gallery: [
-      "/images/casalink-dashboard.jpg",
-      "/images/casalink-ticket.jpg"
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766796252/Screenshot_from_2025-12-27_01-43-28_emdkgr.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766796252/Screenshot_from_2025-12-27_01-43-45_q54sv3.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766796252/Screenshot_from_2025-12-27_01-42-18_jw1sml.png",
+      
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766796252/Screenshot_from_2025-12-27_01-42-18_jw1sml.png"
     ]
   },
   {
@@ -135,7 +138,7 @@ export const projectsData: Project[] = [
     title: "Nuvopod",
     subtitle: "AI-Powered Smart Wellness Pod & IoT Sanctuary",
     category: "HealthTech / AI / IoT",
-    banner: "/images/nuvopod-banner.jpg",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795335/Screenshot_from_2025-12-27_01-16-04_nkapfo.png",
     liveLink: "https://nuvopod.com",
     repoLink: "https://github.com/yourusername/nuvopod",
     client: "Wellness Tech Startup",
@@ -158,8 +161,8 @@ export const projectsData: Project[] = [
       "Voice-Activated Interface"
     ],
     gallery: [
-      "/images/nuvopod-interface.jpg",
-      "/images/nuvopod-mood.jpg"
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795335/Screenshot_from_2025-12-27_01-16-13_dgrvrb.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795335/Screenshot_from_2025-12-27_01-16-52_iuxhdv.png"
     ]
   },
   {
@@ -167,8 +170,8 @@ export const projectsData: Project[] = [
     title: "VoiceNute",
     subtitle: "Listen-to-Earn Audio Streaming Platform",
     category: "Streaming / Creator Economy",
-    banner: "/images/voicenute-banner.jpg",
-    liveLink: "https://voicenute.com",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795903/Screenshot_from_2025-12-27_01-37-58_cua1py.png",
+    liveLink: "https://voicenute.net",
     repoLink: "https://github.com/yourusername/voicenute",
     client: "Music Tech Startup",
     timeline: "5 Weeks",
@@ -190,8 +193,8 @@ export const projectsData: Project[] = [
       "Gamified Earning Tiers"
     ],
     gallery: [
-      "/images/voicenute-player.jpg",
-      "/images/voicenute-wallet.jpg"
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795825/Screenshot_from_2025-12-27_01-36-10_tmtffl.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795824/Screenshot_from_2025-12-27_01-36-29_pjp51z.png"
     ]
   },
   {
