@@ -5,7 +5,7 @@ import {
   SiArduino,  SiFirebase, SiExpo, SiAlgolia, 
   SiAndroid,
 } from "react-icons/si";
-import { FaFingerprint, FaCamera, FaFilter, FaCoins, FaExchangeAlt,  } from "react-icons/fa";
+import { FaFingerprint, FaCamera, FaFilter,  } from "react-icons/fa";
 
 // 1. Define the Types
 export interface TechStackItem {
@@ -42,7 +42,7 @@ export const projectsData: Project[] = [
     category: "Fintech / B2B SaaS",
     banner: "https://media.licdn.com/dms/image/v2/D4E22AQEd_6mx8wHOmg/feedshare-shrink_800/B4EZtPCBhOGoAg-/0/1766557491178?e=1768435200&v=beta&t=mHm5Eneyd9R34Ka4aUhFj3zgMA2lbV5eUEH_LdjM8T0",
     liveLink: "https://safeqly.com",
-    repoLink: "https://github.com/yourusername/safeqly",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Internal Venture",
     timeline: "24 Days (Sprint)",
     role: "Lead Full Stack Engineer",
@@ -74,7 +74,7 @@ export const projectsData: Project[] = [
     category: "E-commerce / Marketplace",
     banner: "https://media.licdn.com/dms/image/v2/D4D22AQH1nI1K9hWNEQ/feedshare-shrink_800/B4DZrYXsKCIAAg-/0/1764566695635?e=1768435200&v=beta&t=TEoS7szkN8scmeN_r5Sjajy27D-GAfeprNxNqmrqBY8",
     liveLink: "https://xnria.com",
-    repoLink: "https://github.com/yourusername/xnria",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Startup Venture",
     timeline: "3 Months",
     role: "Lead Frontend Engineer",
@@ -106,7 +106,7 @@ export const projectsData: Project[] = [
     category: "PropTech / SaaS",
     banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766796252/Screenshot_from_2025-12-27_01-43-28_emdkgr.png",
     liveLink: "https://casalink.app/login",
-    repoLink: "https://github.com/yourusername/casalink",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Real Estate Enterprise",
     timeline: "2 Months",
     role: "Lead Full Stack Engineer",
@@ -140,7 +140,7 @@ export const projectsData: Project[] = [
     category: "HealthTech / AI / IoT",
     banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795335/Screenshot_from_2025-12-27_01-16-04_nkapfo.png",
     liveLink: "https://nuvopod.com",
-    repoLink: "https://github.com/yourusername/nuvopod",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Wellness Tech Startup",
     timeline: "6 Weeks",
     role: "Lead Software Engineer (AI & IoT)",
@@ -172,7 +172,7 @@ export const projectsData: Project[] = [
     category: "Streaming / Creator Economy",
     banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795903/Screenshot_from_2025-12-27_01-37-58_cua1py.png",
     liveLink: "https://voicenute.net",
-    repoLink: "https://github.com/yourusername/voicenute",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Music Tech Startup",
     timeline: "5 Weeks",
     role: "Lead Full Stack Engineer",
@@ -197,49 +197,17 @@ export const projectsData: Project[] = [
       "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766795824/Screenshot_from_2025-12-27_01-36-29_pjp51z.png"
     ]
   },
-  {
-    id: 6,
-    title: "Skillovia",
-    subtitle: "Tokenized Skills Exchange & Barter Platform",
-    category: "Gig Economy / Web & Mobile",
-    banner: "/images/skillovia-banner.jpg",
-    liveLink: "https://skillovia.com",
-    repoLink: "https://github.com/yourusername/skillovia",
-    client: "Startup Venture",
-    timeline: "7 Weeks",
-    role: "Lead Full Stack Engineer",
-    stack: [
-      { icon: SiReact, name: "React / React Native" },
-      { icon: SiNodedotjs, name: "Node.js" },
-      { icon: FaCoins, name: "Spark Token" },
-      { icon: SiMongodb, name: "MongoDB" },
-      { icon: FaExchangeAlt, name: "Barter Logic" },
-    ],
-    challenge: "Traditional gig platforms rely entirely on cash, excluding skilled workers who are cash-poor but rich in talent. The challenge was digitizing the ancient concept of **Trade by Barter**. \n\nTechnically, we needed to solve the 'Coincidence of Wants' problem: If a Plumber needs a Website, but the Developer doesn't need plumbing, how do they trade? We needed an intermediate value store that wasn't fiat currency, and a way to calculate 'Value Equivalence' between completely different services.",
-    solution: "I engineered a dual-platform ecosystem (Web & Mobile) centered around the **'Spark Token'**—an internal digital currency. Instead of direct 1:1 bartering, users earn Sparks for services rendered, which they can spend on other services later. \n\nI built a **centralized ledger system** using Node.js to track Token Transactions and maintain the economy's balance. For direct swaps, I created a 'Barter Negotiation Flow' where two users can agree on a custom exchange with a digital contract to enforce fulfillment.",
-    features: [
-      "Cross-Platform Architecture (Web & Mobile Sync)",
-      "Internal Economy System (Spark Token Ledger)",
-      "Direct Service-for-Service Barter Negotiation",
-      "Escrow for Non-Monetary Digital Assets",
-      "Geolocation Search for Local Workers"
-    ],
-    gallery: [
-      "/images/skillovia-barter.jpg",
-      "/images/skillovia-wallet.jpg"
-    ]
-  },
 
-  // --- MOBILE PROJECTS ---
+
 
   {
     id: 7,
-    title: "MediConnect",
+    title: "BukaDose",
     subtitle: "Mobile Pharmacy & Telemedicine App",
     category: "HealthTech / Mobile App",
-    banner: "/images/mediconnect-banner.jpg",
-    liveLink: "https://play.google.com/store/apps/details?id=com.mediconnect",
-    repoLink: "https://github.com/yourusername/mediconnect",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847613/Screenshot_20250915_040239_BukaDose-App_h52bsp.jpg",
+    liveLink: "https://drive.google.com/file/d/1UDUbH_wE29Z7g9iqrO_J_kx0grUrGLTO/view",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Healthcare Startup",
     timeline: "8 Weeks",
     role: "Lead Mobile Engineer",
@@ -260,18 +228,22 @@ export const projectsData: Project[] = [
       "Geo-Location Tracking for Drug Delivery"
     ],
     gallery: [
-      "/images/mediconnect-home.jpg",
-      "/images/mediconnect-video.jpg"
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847613/Screenshot_20250915_040239_BukaDose-App_h52bsp.jpg",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847605/Screenshot_20250915_040217_BukaDose-App_mlfwga.jpg"
     ]
   },
+
+
+
+
   {
     id: 8,
     title: "SafeQly Mobile",
     subtitle: "Secure Escrow Wallet & Transaction App",
     category: "Mobile App / Fintech",
-    banner: "/images/safeqly-mobile-banner.jpg",
-    liveLink: "https://play.google.com/store/apps/details?id=com.safeqly.mobile",
-    repoLink: "https://github.com/yourusername/safeqly-mobile",
+    banner: "https://media.licdn.com/dms/image/v2/D4D22AQF5uakLoVsnZQ/feedshare-shrink_1280/B4DZsBa2UvJQAg-/0/1765255374298?e=1768435200&v=beta&t=xF6VVypeoOtoE8II2g9gf8nQEF3iepyUQEkY85L40bg",
+    liveLink: "https://expo.dev/preview/update?message=notifcation+done%2C%2C+raise+dispute+in+progress&updateRuntimeVersion=1.0.0&createdAt=2025-12-09T04%3A08%3A03.294Z&slug=exp&projectId=11ecc7c7-f57b-4a64-b571-84bdc76a6efa&group=c830a22c-806c-43e0-a974-c92940171a86",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Internal Venture",
     timeline: "3 Weeks",
     role: "Lead Mobile Engineer",
@@ -292,18 +264,18 @@ export const projectsData: Project[] = [
       "Offline Mode for Viewing History"
     ],
     gallery: [
-      "/images/safeqly-mobile-login.jpg",
-      "/images/safeqly-mobile-wallet.jpg"
+      "https://media.licdn.com/dms/image/v2/D4D22AQFCPIoEcvXu3A/feedshare-shrink_2048_1536/B4DZsBa2f6GwAk-/0/1765255375031?e=1768435200&v=beta&t=YxpzGXcWZOQxhjnrU7evNv-mNGM-8W5Zcs5CqGvw9gk",
+      "https://media.licdn.com/dms/image/v2/D4D22AQEMj3Am8yGI_g/feedshare-shrink_1280/B4DZr6aFgfGwAc-/0/1765137733847?e=1768435200&v=beta&t=PaYFW1NzbQ1qOtxLkVx-kJztAd6QX4gFHkinMqh7VM8"
     ]
   },
   {
     id: 9,
-    title: "Xnria Manager",
+    title: "Xnria Mobile",
     subtitle: "Mobile Dashboard for Fashion Designers",
     category: "Mobile App / E-commerce",
-    banner: "/images/xnria-mobile-banner.jpg",
-    liveLink: "https://play.google.com/store/apps/details?id=com.xnria.manager",
-    repoLink: "https://github.com/yourusername/xnria-mobile",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766851134/Screen_Shot_2025-12-27_at_16.51.17_gk7n2y.png",
+    liveLink: "https://drive.google.com/file/d/1FHssanbU0zy1QL46g7uMr5QEYrdjRd-x/view?usp=sharing",
+    repoLink: "https://github.com/au-lex?tab=repositories-mobile",
     client: "Startup Venture",
     timeline: "4 Weeks",
     role: "Lead Mobile Engineer",
@@ -323,18 +295,54 @@ export const projectsData: Project[] = [
       "QR Code Scanner for Inventory Tracking"
     ],
     gallery: [
-      "/images/xnria-mobile-cam.jpg",
-      "/images/xnria-mobile-chat.jpg"
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766851111/Screen_Shot_2025-12-27_at_16.51.42_lotivg.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766851098/Screen_Shot_2025-12-27_at_16.52.22_ut7up4.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766851076/Screen_Shot_2025-12-27_at_16.52.45_zp3dqs.png"
     ]
   },
+
+  {
+    id: 11, 
+    title: "Verse",
+    subtitle: "High-Performance Offline Bible Reader",
+    category: "EdTech / Mobile App",
+    banner: "https://your-image-source.com/verse-banner.jpg", 
+    liveLink: "https://expo.dev/preview/update?message=full+app+done&updateRuntimeVersion=1.0.0&createdAt=2025-08-15T02%3A54%3A23.282Z&slug=exp&projectId=76b8965a-5547-47d5-8b8d-f156f20d9a28&group=b7649382-322c-4ead-a16f-892a504cc6cd",
+    repoLink: "https://github.com/au-lex/Verse",
+    client: "Personal Project",
+    timeline: "3 Weeks",
+    role: "Lead Mobile Engineer",
+    stack: [
+      { icon: SiReact, name: "React Native" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiExpo, name: "Expo" },
+      { icon: SiPostgresql, name: "SQLite (Local Storage)" },
+      { icon: SiTailwindcss, name: "NativeWind" },
+    ],
+    challenge: "The primary challenge was managing **large-scale text rendering and offline availability**. Standard mobile views struggle with performance when rendering entire biblical chapters (some with over 100 verses) while maintaining smooth scrolling. Additionally, the app needed to function in 'Flight Mode,' requiring a robust caching strategy that stores fetched books locally without bloating the device's storage.",
+    solution: "I implemented a **Local First Architecture** using SQLite for persistent storage of downloaded versions. To ensure smooth performance, I utilized **FlashList** for optimized list virtualization, ensuring only visible verses are rendered in memory. \n\nFor the search functionality, I built a local indexing system that allows users to query keywords across all 66 books in milliseconds. The UI uses a 'Skeleton Loading' pattern to provide immediate visual feedback while the text engine parses the structured JSON data into formatted verses.",
+    features: [
+      "Offline Reading with Auto-Caching Engine",
+      "Cross-Book Global Search Index",
+      "Dynamic Font Scaling & Dark Mode Support",
+      "Chapter-based Progress Tracking",
+      "High-Performance Virtualized List Rendering"
+    ],
+    gallery: [
+      "https://your-image-source.com/verse-screen-1.jpg",
+      "https://your-image-source.com/verse-screen-2.jpg"
+    ]
+  },
+
+
   {
     id: 10,
     title: "Knvas",
     subtitle: "AI-Driven Scholarship Discovery & Application App",
     category: "EdTech / Mobile App",
-    banner: "/images/knvas-banner.jpg",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847598/Screenshot_20251018_204547_Expo_Go_hbhhmh.jpg",
     liveLink: "https://play.google.com/store/apps/details?id=com.knvas.app",
-    repoLink: "https://github.com/yourusername/knvas",
+    repoLink: "https://github.com/au-lex?tab=repositories",
     client: "EdTech Startup",
     timeline: "5 Weeks",
     role: "Lead Mobile Engineer",
@@ -355,8 +363,8 @@ export const projectsData: Project[] = [
       "In-App Essay Drafting & Saving"
     ],
     gallery: [
-      "/images/knvas-home.jpg",
-      "/images/knvas-match.jpg"
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847598/Screenshot_20251018_204547_Expo_Go_hbhhmh.jpg",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847589/Screenshot_20251011_000447_knvas_career_hub_crhj24.jpg",
     ]
   }
 ];

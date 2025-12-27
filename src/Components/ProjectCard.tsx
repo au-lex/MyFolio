@@ -35,10 +35,9 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const navigate = useNavigate();
 
-  // Helper to determine if it's mobile or web based on category
   const isMobile = project.category.toLowerCase().includes('mobile');
   
-  // Helper to get a short description (using the challenge text)
+
   const shortDescription = project.challenge.length > 120 
     ? project.challenge.substring(0, 120) + "..." 
     : project.challenge;
@@ -53,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       className="group relative flex flex-col lg:flex-row bg-black border border-zinc-800 rounded-sm overflow-hidden hover:border-zinc-600 transition-colors duration-300 min-h-[320px]"
     >
       {/* 1. Image Section */}
-      <div className="w-full lg:w-[40%] h-64 lg:h-auto relative overflow-hidden bg-zinc-950 border-r border-zinc-800">
+      <div className="w-full lg:w-[40%] h-64 lg:h-[24rem] relative overflow-hidden bg-zinc-950 border-r border-zinc-800">
         <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-all duration-500" />
         <img 
           src={project.banner} 

@@ -29,7 +29,7 @@ export const ProjectsPage: React.FC = () => {
     return true;
   });
 
-  // 3. Pagination Logic (Calculated based on the FILTERED list)
+
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
   const currentData = filteredProjects.slice(
     (currentPage - 1) * itemsPerPage,
@@ -62,7 +62,7 @@ export const ProjectsPage: React.FC = () => {
                           <span className="w-1 h-4 bg-zinc-700"></span>
                           <span className="w-1 h-4 bg-zinc-800"></span>
                       </div>
-                      <span className="font-mono text-xs text-zinc-500 tracking-[0.2em] uppercase">System.Directory_v2</span>
+                      <span className="font-mono text-xs text-zinc-500 tracking-[0.2em] uppercase">PROJECTS</span>
                   </div>
                   <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-2">
                       Selected Works
