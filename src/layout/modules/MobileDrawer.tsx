@@ -1,7 +1,8 @@
 import React from 'react';
-import { Menu, CloseCircle, Instagram, Global, Moon, Sun1 } from 'iconsax-react';
+import { Menu, CloseCircle, Moon, Sun1 } from 'iconsax-react';
 import { MobileNavItem } from '../../Components/ui/NavItems'; 
 import { SocialButton } from '../../Components/ui/SocialButton';
+import { FaGithub, FaLinkedinIn,  FaXTwitter } from 'react-icons/fa6';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -61,9 +62,9 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, nav
                 </button>
 
                 <div className="flex justify-between gap-2">
-                    <SocialButton icon={Instagram} />
-                    <SocialButton icon={Global} />
-                    <SocialButton icon={CloseCircle} />
+            <SocialButton icon={FaGithub} href='https://github.com/au-lex?tab=repositories' />
+                       <SocialButton icon={FaLinkedinIn} href='https://www.linkedin.com/in/boniface-ifebuche-aulex-467a74247' />
+                       <SocialButton icon={FaXTwitter} href='https://x.com/Aulex_0'  />
                 </div>
             </div>
         </div>

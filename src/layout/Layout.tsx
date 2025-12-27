@@ -13,8 +13,7 @@ const Layout: React.FC<PortfolioLayoutProps> = ({ children }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   
-  // Note: Toggle functionality is usually handled by a ThemeContext, 
-  // but kept local here as per your snippet.
+ 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   const navLinks = [
