@@ -17,7 +17,7 @@ export const Contact: React.FC = () => {
 
   return (
     <Layout>
-      {/* Updated: bg-black -> bg-pri, text-white -> text-text */}
+
       <section className="bg-pri min-h-screen text-text selection:bg-purple-500/30 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-1 md:px-12 lg:px-24 py-12 lg:py-20">
           
@@ -76,7 +76,7 @@ export const Contact: React.FC = () => {
                             <label className="block text-sec text-[10px] font-mono uppercase tracking-widest mb-2 group-focus-within/input:text-purple-500 transition-colors">
                                 // User_Identity
                             </label>
-                            {/* Input: bg-pri, text-text, placeholder-sec/50 */}
+                          
                             <input 
                                 type="text" 
                                 placeholder="ENTER NAME" 
@@ -156,13 +156,13 @@ export const Contact: React.FC = () => {
                        <FaqSection />
                    </div>
                    
-                   <div className="mt-8 p-6 border border-dashed border-border bg-sec/5 text-center">
-                        <p className="text-sec text-xs mb-3 font-mono">DIRECT_LINE</p>
-                        <h3 className="text-xl md:text-2xl font-black text-text mb-4 tracking-tight">hello@devcraft.com</h3>
+                   <div className="mt-8 p-6 border border-dashed border-border bg-card text-center">
+                        <p className="text-sec text-xs mb-3 font-mono">DIRECT LINE</p>
+                        <h3 className="text-xl md:text-2xl font-black text-text mb-4 tracking-tight">+2348158772715</h3>
                   
-                        <button className="mx-auto flex items-center gap-2 px-4 py-2 bg-sec hover:bg-text text-pri text-[10px] font-bold uppercase tracking-widest rounded-sm transition-colors">
-                            <Copy size={14} />
-                            Copy_Address
+                        <button className="mx-auto flex items-center gap-2 px-4 py-2 bg-pri hover:bg-text text-text border border-border text-[10px] font-bold uppercase tracking-widest rounded-sm transition-colors">
+                            <Copy size={14} variant="Bold" color='currentColor' className='text-text' />
+                            Copy Address
                         </button>
                    </div>
                 </div>

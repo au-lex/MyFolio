@@ -52,7 +52,7 @@ const StackCard: React.FC<StackCardProps> = ({ name, icon: Icon, color, index })
     </div>
 
     {/* Icon Container */}
-    <div className="w-10 h-10 rounded-sm bg-zinc-950 border border-zinc-800 flex items-center justify-center group-hover:border-zinc-500 transition-colors">
+    <div className="w-10 h-10 rounded-sm bg-zinc-950 border border-border flex items-center justify-center group-hover:border-zinc-500 transition-colors">
       <Icon size={20} className={`${color} opacity-80 group-hover:opacity-100 transition-opacity`} />
     </div>
     
@@ -107,16 +107,16 @@ const MyStacks: React.FC = () => {
             
             <button 
               onClick={() => setShowAll(!showAll)}
-              className="relative w-full py-4 border-t border-b border-zinc-800 hover:border-zinc-600 flex flex-col items-center justify-center gap-2 transition-all"
+              className="relative w-full py-4 border-t border-b border-border hover:border-zinc-600 flex flex-col items-center justify-center gap-2 transition-all"
             >
-              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 group-hover:text-white transition-colors">
-                 {showAll ? 'Collapse_View' : 'Expand_System'}
+              <span className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 group-hover:text-white transition-colors">
+                 {showAll ? 'Collapse' : 'View All'}
               </span>
               
               {showAll ? (
-                <ArrowUp2 size={16} className="text-zinc-500 group-hover:text-white group-hover:-translate-y-1 transition-all" />
+                <ArrowUp2 size={16} color='currentColor' className="text-text group-hover:text-white group-hover:-translate-y-1 transition-all" />
               ) : (
-                <ArrowDown2 size={16} className="text-zinc-500 group-hover:text-white group-hover:translate-y-1 transition-all" />
+                <ArrowDown2 size={16} color='currentColor' className="text-text group-hover:text-white group-hover:translate-y-1 transition-all" />
               )}
             </button>
           </div>
