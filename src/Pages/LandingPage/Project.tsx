@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flash, ArrowRight, } from 'iconsax-react';
-// import { SiReact, SiTailwindcss, SiTypescript, SiNodedotjs, SiMongodb, SiNextdotjs, SiFigma } from 'react-icons/si';
+
 
 
 import ProjectCard from '../../Components/ProjectCard';
@@ -10,8 +10,7 @@ export const Projects: React.FC = () => {
   return (
     <section className="text-white">
       <div className="mx-auto flex flex-col gap-10">
-     
-        {/* --- SHARP HEADER --- */}
+
         <div className="border-l-2 border-purple-500 pl-6 py-2">
           <div className="flex items-center gap-3 mb-2">
             <Flash size={24} variant="Bold" color='#fff' className="text-purple-500" />
