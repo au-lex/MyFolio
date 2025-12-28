@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight2 } from 'iconsax-react';
 import { useNavigate } from 'react-router-dom';
 
-// Imports
+
 import Layout from '../../layout/Layout';
 import ProjectCard from '../../Components/ProjectCard';
 import { projectsData } from '../../Data/ProjectData';
@@ -14,21 +14,15 @@ export const ProjectsPage: React.FC = () => {
   const itemsPerPage = 4;
   const navigate = useNavigate();
   
-
   const tabs = ["All", "Web", "Mobile"];
-
 
   const filteredProjects = projectsData.filter(project => {
     if (filter === "All") return true;
-    
     const isMobile = project.category.toLowerCase().includes("mobile");
-    
     if (filter === "Mobile") return isMobile;
     if (filter === "Web") return !isMobile;
-    
     return true;
   });
-
 
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
   const currentData = filteredProjects.slice(
@@ -43,43 +37,43 @@ export const ProjectsPage: React.FC = () => {
     }
   };
 
-
   useEffect(() => {
     setCurrentPage(1);
   }, [filter]);
 
   return (
     <Layout>
-      <section className="min-h-screen text-white selection:bg-purple-500/30">
+   
+      <section className="min-h-screen text-text selection:bg-purple-500/30 transition-colors duration-300">
         <div className="lg:max-w-6xl mx-auto lg:py-12 flex flex-col lg:gap-12 ">
        
-          {/* HEADER SECTION */}
-          <header className="grid grid-cols-1 lg:grid-cols-12 border-b border-zinc-800 pb-8">
+
+          <header className="grid grid-cols-1 lg:grid-cols-12 border-b border-border pb-8">
               <div className="lg:col-span-8 py-6">
                   <div className="flex items-center gap-3 mb-4">
                       <div className="flex gap-1">
                           <span className="w-1 h-4 bg-purple-600"></span>
-                          <span className="w-1 h-4 bg-zinc-700"></span>
-                          <span className="w-1 h-4 bg-zinc-800"></span>
+                          {/* Updated: zinc colors -> text-sec/opacity */}         <span className="w-1 h-4 bg-sec/40"></span>
+                          <span className="w-1 h-4 bg-sec/20"></span>
                       </div>
-                      <span className="font-mono text-xs text-zinc-500 tracking-[0.2em] uppercase">PROJECTS</span>
+                      <span className="font-mono text-xs text-sec tracking-[0.2em] uppercase">PROJECTS</span>
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-2">
+                  <h1 className="text-4xl md:text-6xl font-black text-text uppercase tracking-tighter mb-2">
                       Selected Works
                   </h1>
               </div>
               
-              {/* Simplified Filter Tabs */}
+              {/* Filter Tabs */}
               <div className="lg:col-span-12 flex flex-wrap gap-2 mt-4">
                   {tabs.map((tab) => (
                   <button
                       key={tab}
                       onClick={() => setFilter(tab)}
                       className={`
-                      px-6 py-2 text-[10px] font-bold uppercase tracking-widest border transition-all
+                      px-6 py-2 text-[10px] font-bold uppercase tracking-widest border transition-all rounded-sm
                       ${filter === tab 
-                          ? 'bg-white text-black border-white' 
-                          : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:border-zinc-500 hover:text-white'}
+                          ? 'bg-text text-pri border-text shadow-md' 
+                          : 'bg-card text-sec border-border hover:border-purple-500 hover:text-purple-500'}
                       `}
                   >
                       {tab}
@@ -99,7 +93,7 @@ export const ProjectsPage: React.FC = () => {
                         </div>
                     ))
                   ) : (
-                    <div className="py-20 text-center text-zinc-500 font-mono text-sm uppercase">
+                    <div className="py-20 text-center text-sec font-mono text-sm uppercase">
                         No projects found in this sector.
                     </div>
                   )}
@@ -107,23 +101,23 @@ export const ProjectsPage: React.FC = () => {
             </div>
           </div>
 
-          {/* PAGINATION */}
+     
           {totalPages > 1 && (
-              <div className="flex items-center justify-between border-t border-zinc-800 pt-8 mt-8">
+              <div className="flex items-center justify-between border-t border-border pt-8 mt-8 mb-12">
                   <button 
                       onClick={() => handlePageChange(currentPage - 1)}
                       disabled={currentPage === 1}
-                      className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-white disabled:opacity-30 transition-colors"
+                      className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-sec hover:text-purple-500 disabled:opacity-20 transition-colors"
                   >
                       <ArrowLeft size={16} /> Prev
                   </button>
-                  <div className="font-mono text-xs text-zinc-500">
+                  <div className="font-mono text-xs text-sec bg-card border border-border px-4 py-1 rounded-full">
                       PAGE {currentPage} / {totalPages}
                   </div>
                   <button 
                       onClick={() => handlePageChange(currentPage + 1)}
                       disabled={currentPage === totalPages}
-                      className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-white disabled:opacity-30 transition-colors"
+                      className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-sec hover:text-purple-500 disabled:opacity-20 transition-colors"
                   >
                       Next <ArrowRight2 size={16} />
                   </button>

@@ -31,51 +31,51 @@ const faqData: FaqItemType[] = [
   },
 ];
 
-// --- Single FAQ Item Component ---
 const FaqItem: React.FC<{ item: FaqItemType; index: number }> = ({ item, index }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div 
       onClick={() => setIsOpen(!isOpen)}
+      // Updated: bg-zinc-900/10 -> bg-sec/5, border-zinc-800 -> border-border
       className={`group relative border rounded-sm overflow-hidden transition-all duration-300 cursor-pointer ${
         isOpen 
-          ? 'bg-zinc-900/40 border-purple-500/50' 
-          : 'bg-zinc-900/10 border-zinc-800 hover:border-zinc-600'
+          ? 'bg-sec/10 border-purple-500/50' 
+          : 'bg-sec/5 border-border hover:border-purple-500/50'
       }`}
     >
-      {/* Active State Indicator Strip */}
       {isOpen && <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-purple-500" />}
 
       <div className="flex items-start justify-between p-5 gap-4">
         <div className="flex flex-col gap-1">
-            {/* Index Number */}
-            <span className={`text-[10px] font-mono font-bold transition-colors ${isOpen ? 'text-purple-400' : 'text-zinc-600'}`}>
+            {/* Index Number: text-zinc-600 -> text-sec */}
+            <span className={`text-[10px] font-mono font-bold transition-colors ${isOpen ? 'text-purple-500' : 'text-sec'}`}>
                 {(index + 1).toString().padStart(2, '0')} // QUERY
             </span>
             
-            {/* Question */}
-            <h3 className={`font-bold text-sm md:text-base transition-colors ${isOpen ? 'text-white' : 'text-zinc-300 group-hover:text-white'}`}>
+            {/* Question: text-white -> text-text, text-zinc-300 -> text-sec */}
+            <h3 className={`font-bold text-sm md:text-base transition-colors ${isOpen ? 'text-text' : 'text-sec group-hover:text-text'}`}>
                 {item.question}
             </h3>
         </div>
 
-        {/* Toggle Button */}
+        {/* Toggle Button: bg-zinc-950 -> bg-pri, border-zinc-800 -> border-border */}
         <div className={`w-6 h-6 flex-shrink-0 rounded-sm flex items-center justify-center border transition-all mt-1 ${
             isOpen 
              ? 'bg-purple-500 border-purple-500 text-white' 
-             : 'bg-zinc-950 border-zinc-800 text-zinc-500 group-hover:border-zinc-500 group-hover:text-white'
+             : 'bg-pri border-border text-sec group-hover:border-purple-500 group-hover:text-purple-500'
         }`}>
           {isOpen ? <Minus size={14} /> : <Add size={14} />}
         </div>
       </div>
       
-      {/* Animated Answer Area */}
       <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
         <div className="overflow-hidden">
           <div className="p-5 pt-0">
-             <div className="border-t border-zinc-800/50 pt-4">
-                <p className="text-zinc-400 text-sm leading-relaxed font-light">
+             {/* Divider: border-zinc-800/50 -> border-border/50 */}
+             <div className="border-t border-border/50 pt-4">
+                {/* Answer: text-zinc-400 -> text-sec */}
+                <p className="text-sec text-sm leading-relaxed font-light">
                     <span className="text-purple-500 font-mono text-xs mr-2">{'>'}</span>
                     {item.answer}
                 </p>
@@ -87,23 +87,23 @@ const FaqItem: React.FC<{ item: FaqItemType; index: number }> = ({ item, index }
   );
 };
 
-// --- Main Exported Component ---
 const FaqSection: React.FC = () => {
   return (
     <div className="w-full">
-      {/* HEADER */}
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-2">
-          <Computing size={24} variant="Bold" className="text-zinc-600" />
-          <h2 className="text-2xl font-black text-white uppercase tracking-tighter">System_FAQ</h2>
+          {/* Icon: text-zinc-600 -> text-sec */}
+          <Computing size={24} variant="Bold" className="text-sec" />
+          {/* Header: text-white -> text-text */}
+          <h2 className="text-2xl font-black text-text uppercase tracking-tighter">System_FAQ</h2>
         </div>
         <div className="h-[1px] w-12 bg-purple-500 mb-4" />
-        <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest">
+        {/* Subheader: text-zinc-500 -> text-sec */}
+        <p className="text-sec text-xs font-mono uppercase tracking-widest">
           // Common Protocols & Inquiries
         </p>
       </div>
 
-      {/* LIST */}
       <div className="flex flex-col gap-3">
         {faqData.map((item, index) => (
           <FaqItem key={index} index={index} item={item} />
