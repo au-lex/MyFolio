@@ -37,11 +37,11 @@ const FaqItem: React.FC<{ item: FaqItemType; index: number }> = ({ item, index }
   return (
     <div 
       onClick={() => setIsOpen(!isOpen)}
-      // Updated: bg-zinc-900/10 -> bg-sec/5, border-zinc-800 -> border-border
+
       className={`group relative border rounded-sm overflow-hidden transition-all duration-300 cursor-pointer ${
         isOpen 
-          ? 'bg-sec/10 border-purple-500/50' 
-          : 'bg-sec/5 border-border hover:border-purple-500/50'
+          ? 'bg-card border-purple-500/50' 
+          : 'bg-card border-border hover:border-purple-500/50'
       }`}
     >
       {isOpen && <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-purple-500" />}
@@ -50,7 +50,7 @@ const FaqItem: React.FC<{ item: FaqItemType; index: number }> = ({ item, index }
         <div className="flex flex-col gap-1">
             {/* Index Number: text-zinc-600 -> text-sec */}
             <span className={`text-[10px] font-mono font-bold transition-colors ${isOpen ? 'text-purple-500' : 'text-sec'}`}>
-                {(index + 1).toString().padStart(2, '0')} // QUERY
+                {(index + 1).toString().padStart(2, '0')} 
             </span>
             
             {/* Question: text-white -> text-text, text-zinc-300 -> text-sec */}
@@ -65,16 +65,16 @@ const FaqItem: React.FC<{ item: FaqItemType; index: number }> = ({ item, index }
              ? 'bg-purple-500 border-purple-500 text-white' 
              : 'bg-pri border-border text-sec group-hover:border-purple-500 group-hover:text-purple-500'
         }`}>
-          {isOpen ? <Minus size={14} /> : <Add size={14} />}
+          {isOpen ? <Minus size={14} color='currentColor' /> : <Add size={14} color='currentColor' />}
         </div>
       </div>
       
       <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
         <div className="overflow-hidden">
           <div className="p-5 pt-0">
-             {/* Divider: border-zinc-800/50 -> border-border/50 */}
+      
              <div className="border-t border-border/50 pt-4">
-                {/* Answer: text-zinc-400 -> text-sec */}
+          
                 <p className="text-sec text-sm leading-relaxed font-light">
                     <span className="text-purple-500 font-mono text-xs mr-2">{'>'}</span>
                     {item.answer}
@@ -93,14 +93,14 @@ const FaqSection: React.FC = () => {
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-2">
           {/* Icon: text-zinc-600 -> text-sec */}
-          <Computing size={24} variant="Bold" className="text-sec" />
-          {/* Header: text-white -> text-text */}
-          <h2 className="text-2xl font-black text-text uppercase tracking-tighter">System_FAQ</h2>
+          <Computing size={24} variant="Bold" color='currentColor' className="text-text" />
+       
+          <h2 className="text-2xl font-black text-text uppercase tracking-tighter">FAQ</h2>
         </div>
         <div className="h-[1px] w-12 bg-purple-500 mb-4" />
-        {/* Subheader: text-zinc-500 -> text-sec */}
+   
         <p className="text-sec text-xs font-mono uppercase tracking-widest">
-          // Common Protocols & Inquiries
+           Common Protocols & Inquiries
         </p>
       </div>
 

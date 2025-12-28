@@ -18,8 +18,8 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
 
 const HeroSection: React.FC = () => {
   return (
-    // Updated: bg-black -> bg-pri, text-white -> text-text, border-zinc-800 -> border-border
-    <section className="relative min-h-[80vh] flex flex-col justify-center pt-[2rem] md:pt-[6rem] border-b border-border bg-pri transition-colors duration-300">
+   
+    <section className="relative min-h-[80vh] flex flex-col justify-center pt-[3rem] md:pt-[6rem] border-b border-border bg-pri transition-colors duration-300">
       
   
       <section className="w-full max-w-7xl mx-auto relative z-10">
