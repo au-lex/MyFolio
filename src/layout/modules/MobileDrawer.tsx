@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, CloseCircle, Moon, Sun1 } from 'iconsax-react';
+import { Menu, CloseCircle, } from 'iconsax-react';
 import { MobileNavItem } from '../../Components/ui/NavItems'; 
 import { SocialButton } from '../../Components/ui/SocialButton';
 import { FaGithub, FaLinkedinIn,  FaXTwitter } from 'react-icons/fa6';
@@ -12,33 +12,40 @@ interface MobileDrawerProps {
   toggleTheme?: () => void;
 }
 
-export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, navLinks, isDarkMode = true, toggleTheme }) => {
+export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, navLinks,  }) => {
   return (
     <div className={`fixed inset-0 z-50 flex xl:hidden pointer-events-none`}>
-        {/* Overlay */}
+
         <div 
             className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
                 isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
             }`}
             onClick={onClose}
+            aria-hidden="true"
         ></div>
         
-        {/* Drawer Content */}
-        <div 
-          className={`relative w-64 h-full bg-zinc-950 border-r border-zinc-800 p-6 flex flex-col shadow-2xl transition-transform duration-300 ease-out pointer-events-auto ${
+
+        <aside 
+          className={`relative w-72 h-full bg-card border-r border-border p-6 flex flex-col shadow-2xl transition-transform duration-300 ease-out pointer-events-auto ${
               isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
+            {/* Header section */}
             <div className="flex justify-between items-center mb-10">
-                <div className="flex items-center gap-2 font-bold tracking-tighter text-white">
-                  <Menu size={20} color='currentColor' variant="Bold" className='text-white'/>
-                  <span>MENU</span>
+                <div className="flex items-center gap-2 font-black tracking-tighter text-text uppercase">
+                  <Menu size={20} variant="Bold" color='currentColor' className='text-text'/>
+                  <span>Menu</span>
                 </div>
-                <button onClick={onClose} className="p-2 hover:bg-zinc-900 rounded-lg transition-colors">
-                    <CloseCircle size={24} className="text-zinc-400"/>
+                <button 
+                  onClick={onClose} 
+                  className="p-2 hover:bg-sec/10 text-sec hover:text-text rounded-sm transition-all"
+                  aria-label="Close Menu"
+                >
+                    <CloseCircle size={24} />
                 </button>
             </div>
 
+            {/* Navigation section */}
             <nav className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                     <MobileNavItem 
@@ -51,23 +58,22 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, nav
                 ))}
             </nav>
 
-            <div className="mt-auto pt-8 border-t border-zinc-900 flex flex-col gap-4">
-                {/* Mobile Dark Mode Toggle */}
-                <button 
-                    onClick={toggleTheme}
-                    className="flex items-center justify-between w-full px-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900 text-zinc-400"
-                >
-                    <span className="text-sm font-medium">Dark Mode</span>
-                    {isDarkMode ? <Sun1 size={20} variant="Linear" /> : <Moon size={20} variant="Linear" />}
-                </button>
+            {/* Footer section - Changed to <footer> for semantic structure */}
+            <footer className="mt-auto pt-8 border-t border-border flex flex-col gap-6">
+                
+                
+          
 
-                <div className="flex justify-between gap-2">
-            <SocialButton icon={FaGithub} href='https://github.com/au-lex?tab=repositories' />
-                       <SocialButton icon={FaLinkedinIn} href='https://www.linkedin.com/in/boniface-ifebuche-aulex-467a74247' />
-                       <SocialButton icon={FaXTwitter} href='https://x.com/Aulex_0'  />
+                {/* Social Actions */}
+                <div className="flex justify-between items-center bg-sec/5 p-2 border border-border rounded-sm">
+                   <SocialButton icon={FaGithub} href='https://github.com/au-lex?tab=repositories' />
+                   <SocialButton icon={FaLinkedinIn} href='https://www.linkedin.com/in/boniface-ifebuche-aulex-467a74247' />
+                   <SocialButton icon={FaXTwitter} href='https://x.com/Aulex_0'  />
                 </div>
-            </div>
-        </div>
+                
+     
+            </footer>
+        </aside>
     </div>
   );
 };
