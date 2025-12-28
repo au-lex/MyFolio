@@ -11,8 +11,7 @@ interface SidebarsProps {
 export const Sidebars: React.FC<SidebarsProps> = ({ navLinks }) => {
   return (
     <>
-      {/* --- LEFT SIDEBAR --- */}
-      {/* Updated: bg-black -> bg-card, border-zinc-800 -> border-border */}
+    
       <aside className="hidden xl:flex fixed left-0 top-0 h-screen w-[100px] flex-col justify-between items-center py-8 z-30 bg-card border-r border-border transition-colors duration-300">
         <div className="flex flex-col gap-6 items-center">
           {/* Logo or top element space */}
@@ -30,17 +29,16 @@ export const Sidebars: React.FC<SidebarsProps> = ({ navLinks }) => {
         </nav>
 
         <div>
-          {/* Updated: text-zinc-600 -> text-sec */}
+
           <ArrowUp2 
             size={20} 
             color='currentColor' 
-            className="text-sec hover:text-purple-500 transition-colors cursor-pointer" 
+            className="text-text hover:text-purple-500 transition-colors cursor-pointer" 
           />
         </div>
       </aside>
 
-      {/* --- RIGHT SIDEBAR --- */}
-      {/* Updated: bg-black -> bg-card, border-zinc-800 -> border-border */}
+   
       <aside className="hidden xl:flex fixed right-0 top-0 h-screen w-[100px] flex-col justify-center items-center py-8 z-30 bg-card border-l border-border transition-colors duration-300">
         <div className="flex flex-col gap-8">
             <SocialButton icon={FaGithub} href='https://github.com/au-lex?tab=repositories' />

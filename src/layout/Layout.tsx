@@ -27,12 +27,11 @@ const Layout: React.FC<PortfolioLayoutProps> = ({ children }) => {
   
     <div className="min-h-screen flex flex-col font-sans bg-pri text-text selection:bg-sec selection:text-pri transition-colors duration-300">
       
-      {/* 1. MOBILE HEADER */}
+
       <HeaderMobile onOpenDrawer={() => setIsDrawerOpen(true)} />
 
       <Sidebars navLinks={navLinks} />
 
-      {/* 4. MAIN CONTENT WRAPPER - Remove bg-black */}
       <main className="flex-1 flex flex-col min-w-0 xl:mx-[100px]">
         
         <HeaderDesktop 
@@ -40,16 +39,16 @@ const Layout: React.FC<PortfolioLayoutProps> = ({ children }) => {
           toggleTheme={toggleTheme} 
         />
 
-        {/* Dynamic Page Content */}
+ 
         <div className="flex-1 w-full p-6">
             {children}
         </div>
 
-        {/* 5. FOOTER - Update border and text colors */}
+    
         <footer className="w-full py-6 px-6 border-t border-border mt-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm ">
             
-            {/* Copyright - change text-zinc-100 to text-sec */}
+     
             <p className='text-sec'>
               &copy; {new Date().getFullYear()} Aulex. All Rights Reserved.
             </p>
