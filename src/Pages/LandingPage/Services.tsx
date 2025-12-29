@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Flash, Monitor, Global, Brush, ChartSquare, } from 'iconsax-react';
 import { ArrowUpRight } from 'lucide-react';
@@ -37,14 +35,18 @@ const servicesData: ServiceItem[] = [
     icon: ChartSquare
   }
 ];
+
 export const Services: React.FC = () => {
   return (
-    // Updated: text-white -> text-text
     <section className="text-text transition-colors duration-300">
       <div className="flex flex-col gap-10">
 
         {/* --- SHARP HEADER --- */}
-        <div className="border-l-2 border-purple-500 pl-6 py-2">
+        <div 
+          className="border-l-2 border-purple-500 pl-6 py-2"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <div className="flex items-center gap-3 mb-2">
             <Flash size={24} variant="Bold"  color='currentColor'  className="text-text" />
             <h2 className="text-3xl font-black text-text uppercase tracking-tighter">Services Log</h2>
@@ -56,25 +58,25 @@ export const Services: React.FC = () => {
 
         {/* --- SERVICES GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {servicesData.map((service) => (
+          {servicesData.map((service, index) => (
             <div
               key={service.id}
-              // Updated: bg-card, border-border, hover:bg-sec/5
               className="group relative p-6 md:p-8 bg-card border border-border rounded-sm hover:border-purple-500/50 hover:bg-sec/5 transition-all duration-300 cursor-default overflow-hidden s"
+              data-aos="fade-up"           // Animation: Fade up
+              data-aos-delay={index * 100} // Animation: Stagger effect
             >
 
-              {/* Background Grid Pattern - Opacity managed for both modes */}
+              {/* Background Grid Pattern */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none transition-opacity bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:16px_16px]" />
 
               {/* Top Row: Icon + ID */}
               <div className="flex justify-between items-start mb-6 relative z-10">
-                {/* Icon Box - Updated: bg-pri, border-border, text-sec */}
+                {/* Icon Box */}
                 <span className="w-12 h-12 rounded-sm bg-pri border border-border flex items-center justify-center text-sec group-hover:text-purple-500 group-hover:border-purple-500/30 transition-all shadow-md">
-                  {/* CRITICAL: Removed color='#fff' and used currentColor */}
                   <service.icon size={22} color='currentColor' variant="Bold" />
                 </span>
 
-                {/* ID Tag - Updated: text-zinc-600 -> text-sec/50 */}
+                {/* ID Tag */}
                 <span className="font-mono text-[10px] text-sec/50 group-hover:text-purple-500/50 transition-colors uppercase">
                   SVC_0{service.id}
                 </span>
@@ -86,7 +88,7 @@ export const Services: React.FC = () => {
                   {service.title}
                 </h3>
 
-                {/* Description - Updated: text-zinc-400 -> text-sec, border-zinc-800 -> border-border */}
+                {/* Description */}
                 <p className="text-sec text-sm leading-relaxed border-l border-border pl-4 group-hover:border-purple-500/50 transition-colors">
                   {service.description}
                 </p>

@@ -10,9 +10,13 @@ export const Projects: React.FC = () => {
       <div className="mx-auto flex flex-col gap-10">
 
         {/* SECTION HEADER */}
-        <header className="border-l-2 border-purple-500 pl-6 py-2">
+        <header 
+          className="border-l-2 border-purple-500 pl-6 py-2"
+          data-aos="fade-right"   
+          data-aos-duration="1000"
+        >
           <div className="flex items-center gap-3 mb-2">
-            <Flash size={24} variant="Bold" className="text-text" aria-hidden="true" />
+            <Flash size={24} variant="Bold" color='currentColor'  className="text-text" aria-hidden="true" />
             <h2 id="projects-heading" className="text-3xl font-black uppercase tracking-tighter text-text">
               Selected Works
             </h2>
@@ -24,15 +28,24 @@ export const Projects: React.FC = () => {
 
         {/* PROJECT LIST */}
         <ul className="flex flex-col gap-8">
-          {projectsData.slice(0, 4).map((project) => (
-            <li key={project.id}>
+          {projectsData.slice(0, 4).map((project, index) => (
+            <li 
+              key={project.id}
+              data-aos="fade-up"           
+              data-aos-delay={index * 100} 
+            >
               <ProjectCard project={project} />
             </li>
           ))}
         </ul>
 
         {/* SECTION FOOTER / LINK */}
-        <footer className="pt-4">
+        <footer 
+          className="pt-4"
+          data-aos="fade-up"     
+          data-aos-delay="200"    
+          data-aos-offset="0"   
+        >
           <Link 
             to="/projects" 
             className="group w-full py-6 bg-pri border border-border hover:bg-sec/5 hover:border-purple-500/50 rounded-sm flex items-center justify-center gap-3 transition-all duration-300"
@@ -41,7 +54,7 @@ export const Projects: React.FC = () => {
               View All Projects
             </span>
             <div aria-hidden="true" className="bg-pri p-1 group-hover:bg-purple-500 transition-colors rounded-sm">
-              <ArrowRight size={14} className="text-text group-hover:text-white" />
+              <ArrowRight size={14}color='currentColor'  className="text-text group-hover:text-white" />
             </div>
           </Link>
         </footer>
