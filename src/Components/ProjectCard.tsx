@@ -134,7 +134,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   aria-label={`Visit live site for ${project.title}`}
                   className="flex items-center justify-center w-12 h-10 border border-border hover:border-purple-500 text-sec hover:text-purple-500 transition-all rounded-sm bg-card"
                 >
-                  <ArrowRight size={18} className="-rotate-45" aria-hidden="true" />
+                  <ArrowRight size={18} color='currentColor' className="-rotate-45 text-text" aria-hidden="true" />
                 </a>
               )}
             </footer>

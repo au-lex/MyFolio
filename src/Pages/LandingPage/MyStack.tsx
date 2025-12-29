@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 import { ArrowDown2, ArrowUp2, Layer,  } from 'iconsax-react'; 
 
@@ -44,7 +41,11 @@ interface StackCardProps extends StackItem {
 }
 
 const StackCard: React.FC<StackCardProps> = ({ name, icon: Icon, color, index }) => (
-  <div className="group relative flex items-center gap-4 p-4 bg-card border border-border rounded-sm hover:border-zinc-600 hover:bg-zinc-900/60 transition-all duration-300 cursor-default">
+  <div 
+    className="group relative flex items-center gap-4 p-4 bg-card border border-border rounded-sm hover:border-zinc-600 hover:bg-zinc-900/60 transition-all duration-300 cursor-default"
+    data-aos="zoom-in"           
+    data-aos-delay={index * 50} 
+  >
     
     {/* Tech Index Number (e.g., 01, 02) */}
     <div className="absolute top-2 right-2 text-[9px] font-mono text-zinc-700 group-hover:text-zinc-500 transition-colors">
@@ -77,7 +78,11 @@ const MyStacks: React.FC = () => {
       <div className="">
         
         {/* --- SHARP HEADER --- */}
-        <div className="mb-10 border-l-2 border-zinc-700 pl-6 py-2">
+        <div 
+          className="mb-10 border-l-2 border-zinc-700 pl-6 py-2"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <div className="flex items-center gap-3 mb-2">
             <Layer size={24}  variant="Bold"  color='currentColor'  className="text-text" />
             <h2 className="text-3xl font-black uppercase tracking-tighter text-text">Tech Stack</h2>
@@ -102,7 +107,11 @@ const MyStacks: React.FC = () => {
 
         {/* --- SYSTEM TOGGLE BAR --- */}
         {stackItems.length > INITIAL_VISIBLE_COUNT && (
-          <div className="mt-8 relative group">
+          <div 
+            className="mt-8 relative group"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             
             <button 

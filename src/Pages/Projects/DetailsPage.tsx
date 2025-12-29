@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ExportSquare, Monitor, Mobile } from 'iconsax-react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { ArrowLeft, ExportSquare, Monitor, Mobile } from "iconsax-react";
+import { motion } from "framer-motion";
 
-import Layout from '../../layout/Layout';
-import { projectsData } from '../../Data/ProjectData';
-import { GiBassetHoundHead } from 'react-icons/gi';
+import Layout from "../../layout/Layout";
+import { projectsData } from "../../Data/ProjectData";
+import { GiBassetHoundHead } from "react-icons/gi";
 
 export const ProjectDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,7 +15,7 @@ export const ProjectDetails: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const project = projectsData.find(p => p.id === Number(id));
+  const project = projectsData.find((p) => p.id === Number(id));
 
   if (!project) {
     return (
@@ -23,7 +23,10 @@ export const ProjectDetails: React.FC = () => {
         <div className="min-h-screen flex flex-col items-center justify-center text-sec font-mono">
           <h1 className="text-4xl text-text mb-4">404</h1>
           <p>Project Data Not Found.</p>
-          <button onClick={() => navigate('/projects')} className="mt-8 text-purple-500 hover:text-text underline">
+          <button
+            onClick={() => navigate("/projects")}
+            className="mt-8 text-purple-500 hover:text-text underline"
+          >
             Return to Archive
           </button>
         </div>
@@ -31,7 +34,7 @@ export const ProjectDetails: React.FC = () => {
     );
   }
 
-  const isMobile = project.category.toLowerCase().includes('mobile');
+  const isMobile = project.category.toLowerCase().includes("mobile");
 
   return (
     <Layout>
@@ -39,11 +42,8 @@ export const ProjectDetails: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        // Updated: text-white -> text-text, bg-black -> bg-pri
         className="min-h-screen text-text pb-20 bg-pri selection:bg-purple-500/30 transition-colors duration-300"
       >
-        {/* HERO HEADER */}
-        {/* Updated: bg-zinc-900 -> bg-card, border-zinc-800 -> border-border */}
         <header className="relative w-full h-[50vh] lg:h-[60vh] overflow-hidden bg-card border-b border-border">
           <div className="absolute inset-0">
             <img
@@ -71,8 +71,14 @@ export const ProjectDetails: React.FC = () => {
             </motion.button>
 
             <div className="flex items-center gap-3 mb-4">
-              {isMobile ? <Mobile size={20} className="text-purple-500" /> : <Monitor size={20} className="text-purple-500" />}
-              <span className="text-purple-500 font-mono text-sm tracking-widest uppercase">{project.category}</span>
+              {isMobile ? (
+                <Mobile size={20} className="text-purple-500" />
+              ) : (
+                <Monitor size={20} className="text-purple-500" />
+              )}
+              <span className="text-purple-500 font-mono text-sm tracking-widest uppercase">
+                {project.category}
+              </span>
             </div>
 
             <motion.h1
@@ -97,13 +103,21 @@ export const ProjectDetails: React.FC = () => {
           </div>
         </header>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-16 lg:mt-24">
+        <div className="max-w-7xl mx-auto  lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-16 lg:mt-24">
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8 space-y-20">
             <section aria-labelledby="challenge-heading">
               <header className="flex items-center gap-3 mb-6">
-                <span className="w-12 h-[1px] bg-purple-500" aria-hidden="true"></span>
-                <h3 id="challenge-heading" className="text-sec font-mono text-sm tracking-widest uppercase">01 // The Challenge</h3>
+                <span
+                  className="w-12 h-[1px] bg-purple-500"
+                  aria-hidden="true"
+                ></span>
+                <h3
+                  id="challenge-heading"
+                  className="text-sec font-mono text-sm tracking-widest uppercase"
+                >
+                  01 // The Challenge
+                </h3>
               </header>
               <p className="text-sec text-lg md:text-xl leading-loose whitespace-pre-line font-light">
                 {project.challenge}
@@ -112,8 +126,16 @@ export const ProjectDetails: React.FC = () => {
 
             <section aria-labelledby="solution-heading">
               <header className="flex items-center gap-3 mb-6">
-                <span className="w-12 h-[1px] bg-purple-500" aria-hidden="true"></span>
-                <h3 id="solution-heading" className="text-sec font-mono text-sm tracking-widest uppercase">02 // The Engineering</h3>
+                <span
+                  className="w-12 h-[1px] bg-purple-500"
+                  aria-hidden="true"
+                ></span>
+                <h3
+                  id="solution-heading"
+                  className="text-sec font-mono text-sm tracking-widest uppercase"
+                >
+                  02 // The Engineering
+                </h3>
               </header>
               <p className="text-sec text-lg md:text-xl leading-loose whitespace-pre-line font-light">
                 {project.solution}
@@ -122,13 +144,24 @@ export const ProjectDetails: React.FC = () => {
 
             <section aria-labelledby="gallery-heading">
               <header className="flex items-center gap-3 mb-8">
-                <span className="w-12 h-[1px] bg-border" aria-hidden="true"></span>
-                <h3 id="gallery-heading" className="text-sec font-mono text-sm tracking-widest uppercase">03 // Interface Gallery</h3>
+                <span
+                  className="w-12 h-[1px] bg-border"
+                  aria-hidden="true"
+                ></span>
+                <h3
+                  id="gallery-heading"
+                  className="text-sec font-mono text-sm tracking-widest uppercase"
+                >
+                  03 // Interface Gallery
+                </h3>
               </header>
 
               <div className="grid grid-cols-1 gap-8">
                 {project.gallery.map((img, index) => (
-                  <figure key={index} className="group relative rounded-sm overflow-hidden border border-border bg-card shadow-lg">
+                  <figure
+                    key={index}
+                    className="group relative rounded-sm overflow-hidden border border-border bg-card shadow-lg"
+                  >
                     <div className="absolute inset-0 bg-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
                     <img
                       src={img}
@@ -146,16 +179,28 @@ export const ProjectDetails: React.FC = () => {
             <dl className="p-8 border border-border bg-card backdrop-blur-sm rounded-sm space-y-8 shadow-xl">
               <div className="space-y-6">
                 <div className="border-b border-border pb-4">
-                  <dt className="block text-[10px] font-bold text-purple-500 uppercase tracking-widest mb-2">Role</dt>
-                  <dd className="text-text text-lg font-medium">{project.role}</dd>
+                  <dt className="block text-[10px] font-bold text-purple-500 uppercase tracking-widest mb-2">
+                    Role
+                  </dt>
+                  <dd className="text-text text-lg font-medium">
+                    {project.role}
+                  </dd>
                 </div>
                 <div className="border-b border-border pb-4">
-                  <dt className="block text-[10px] font-bold text-purple-500 uppercase tracking-widest mb-2">Timeline</dt>
-                  <dd className="text-text text-lg font-medium">{project.timeline}</dd>
+                  <dt className="block text-[10px] font-bold text-purple-500 uppercase tracking-widest mb-2">
+                    Timeline
+                  </dt>
+                  <dd className="text-text text-lg font-medium">
+                    {project.timeline}
+                  </dd>
                 </div>
                 <div className="pb-2">
-                  <dt className="block text-[10px] font-bold text-purple-500 uppercase tracking-widest mb-2">Client</dt>
-                  <dd className="text-text text-lg font-medium">{project.client}</dd>
+                  <dt className="block text-[10px] font-bold text-purple-500 uppercase tracking-widest mb-2">
+                    Client
+                  </dt>
+                  <dd className="text-text text-lg font-medium">
+                    {project.client}
+                  </dd>
                 </div>
               </div>
 
@@ -165,10 +210,10 @@ export const ProjectDetails: React.FC = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
-                    // Updated: bg-white text-black -> bg-text text-pri
                     className="flex items-center justify-between w-full px-6 py-4 bg-text text-pri font-bold uppercase text-xs tracking-widest hover:opacity-90 transition-all rounded-sm shadow-md"
                   >
-                    Preview Project <ExportSquare size={16} color='currentColor' />
+                    Preview Project{" "}
+                    <ExportSquare size={16} color="currentColor" />
                   </a>
                 )}
                 {project.repoLink && (
@@ -176,7 +221,6 @@ export const ProjectDetails: React.FC = () => {
                     href={project.repoLink}
                     target="_blank"
                     rel="noreferrer"
-                    // Updated: border-zinc-700 -> border-border
                     className="flex items-center justify-between w-full px-6 py-4 border border-border bg-pri text-sec font-bold uppercase text-xs tracking-widest hover:border-purple-500 hover:text-purple-500 transition-colors rounded-sm"
                   >
                     Source Code <GiBassetHoundHead size={16} />
@@ -186,7 +230,12 @@ export const ProjectDetails: React.FC = () => {
             </dl>
 
             <section aria-labelledby="stack-heading">
-              <h3 id="stack-heading" className="text-sec font-mono text-xs tracking-widest uppercase mb-6 border-b border-border pb-2">Technical Stack</h3>
+              <h3
+                id="stack-heading"
+                className="text-sec font-mono text-xs tracking-widest uppercase mb-6 border-b border-border pb-2"
+              >
+                Technical Stack
+              </h3>
               <ul className="flex flex-wrap gap-2">
                 {project.stack.map((tech, i) => (
                   <li
@@ -201,12 +250,27 @@ export const ProjectDetails: React.FC = () => {
             </section>
 
             <section aria-labelledby="features-heading">
-              <h3 id="features-heading" className="text-sec font-mono text-xs tracking-widest uppercase mb-6 border-b border-border pb-2">Key Features</h3>
+              <h3
+                id="features-heading"
+                className="text-sec font-mono text-xs tracking-widest uppercase mb-6 border-b border-border pb-2"
+              >
+                Key Features
+              </h3>
               <ul className="space-y-4">
                 {project.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-sec leading-relaxed group">
-                    <span className="text-purple-500 mt-[6px] text-[10px]" aria-hidden="true">■</span>
-                    <span className="group-hover:text-text transition-colors">{feature}</span>
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-sm text-sec leading-relaxed group"
+                  >
+                    <span
+                      className="text-purple-500 mt-[6px] text-[10px]"
+                      aria-hidden="true"
+                    >
+                      ■
+                    </span>
+                    <span className="group-hover:text-text transition-colors">
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>

@@ -89,7 +89,11 @@ export const Experience: React.FC = () => {
       <div className="mx-auto">
 
         {/* SECTION HEADER */}
-        <header className="mb-16 border-l-2 border-purple-500 pl-6 py-2">
+        <header 
+          className="mb-16 border-l-2 border-purple-500 pl-6 py-2"
+          data-aos="fade-right" 
+          data-aos-duration="1000"
+        >
           <div className="flex items-center gap-3 mb-2">
             <Briefcase size={24}color='currentColor'  variant="Bold" className="text-text" />
             <h2 id="experience-heading" className="text-3xl font-black uppercase tracking-tighter">
@@ -104,7 +108,13 @@ export const Experience: React.FC = () => {
         {/* TIMELINE LIST */}
         <ol className="flex flex-col gap-0">
           {experienceData.map((item, index) => (
-            <li key={item.id} className="group relative flex gap-6 md:gap-10 pb-12 last:pb-0">
+            <li 
+              key={item.id} 
+              className="group relative flex gap-6 md:gap-10 pb-12 last:pb-0"
+              data-aos="fade-up"           
+              data-aos-delay={index * 100} 
+              data-aos-offset="100"       
+            >
 
               {/* VISUAL TIMELINE (Decorative) */}
               <div aria-hidden="true" className="lg:flex flex-col items-center hidden">
