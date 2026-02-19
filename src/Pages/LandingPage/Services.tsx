@@ -1,5 +1,13 @@
 import React from 'react';
-import { Flash, Monitor, Global, Brush, ChartSquare, } from 'iconsax-react';
+import { 
+  Flash, 
+  Monitor, 
+  Global, 
+  Brush, 
+  ChartSquare, 
+  CpuSetting, 
+  Hierarchy 
+} from 'iconsax-react';
 import { ArrowUpRight } from 'lucide-react';
 
 interface ServiceItem {
@@ -18,27 +26,39 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 2,
-    title: "Web Development",
-    description: "Engineering robust, scalable applications using modern frameworks. Ensuring performance, SEO, and accessibility compliance.",
+    title: "System Architecture",
+    description: "Engineering scalable backend ecosystems and distributed systems designed for high availability and elastic load handling.",
     icon: Global
   },
   {
     id: 3,
-    title: "Mobile Architecture",
-    description: "Developing cross-platform mobile experiences that feel native. Seamless integration with hardware APIs and smooth animations.",
+    title: "Mobile Solutions",
+    description: "Developing cross-platform mobile experiences that feel native, featuring seamless hardware integration and performance-first animations.",
     icon: Brush
   },
   {
     id: 4,
-    title: "Technical SEO",
-    description: "Optimizing code structure and content delivery strategies to elevate visibility and drive organic traffic growth.",
+    title: "AI & Automation",
+    description: "Integrating LLMs and intelligent automation into business workflows to optimize efficiency and provide data-driven insights.",
+    icon: CpuSetting
+  },
+  {
+    id: 5,
+    title: "B2B Infrastructure",
+    description: "Building robust API environments and middleware solutions that facilitate secure, high-speed data exchange between platforms.",
+    icon: Hierarchy
+  },
+  {
+    id: 6,
+    title: "Technical Strategy",
+    description: "Auditing system performance, SEO structure, and scalability bottlenecks to ensure products are built for long-term growth.",
     icon: ChartSquare
   }
 ];
 
 export const Services: React.FC = () => {
   return (
-    <section className="text-text transition-colors duration-300">
+    <section className="text-text transition-colors duration-300 py-10">
       <div className="flex flex-col gap-10">
 
         {/* --- SHARP HEADER --- */}
@@ -48,7 +68,7 @@ export const Services: React.FC = () => {
           data-aos-duration="1000"
         >
           <div className="flex items-center gap-3 mb-2">
-            <Flash size={24} variant="Bold"  color='currentColor'  className="text-text" />
+            <Flash size={24} variant="Bold" color='currentColor' className="text-text" />
             <h2 className="text-3xl font-black text-text uppercase tracking-tighter">Services Log</h2>
           </div>
           <p className="text-sec font-mono text-xs uppercase tracking-widest">
@@ -61,9 +81,9 @@ export const Services: React.FC = () => {
           {servicesData.map((service, index) => (
             <div
               key={service.id}
-              className="group relative p-6 md:p-8 bg-card border border-border rounded-sm hover:border-purple-500/50 hover:bg-sec/5 transition-all duration-300 cursor-default overflow-hidden s"
-              data-aos="fade-up"           // Animation: Fade up
-              data-aos-delay={index * 100} // Animation: Stagger effect
+              className="group relative p-6 md:p-8 bg-card border border-border rounded-sm hover:border-purple-500/50 hover:bg-sec/5 transition-all duration-300 cursor-default overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
 
               {/* Background Grid Pattern */}
