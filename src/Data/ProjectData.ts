@@ -3,9 +3,13 @@ import {
   SiReact, SiTypescript, SiTailwindcss, SiGo, SiPostgresql, SiDocker, 
   SiNodedotjs, SiMongodb, SiRedux, SiPython, SiOpenai, SiSocketdotio, 
   SiArduino,  SiFirebase, SiExpo, SiAlgolia, 
-  SiAndroid,
+  SiAndroid, SiFlutter,
+  SiVitest,
+  SiJest,
+  SiExpress,
 } from "react-icons/si";
-import { FaFingerprint, FaCamera, FaFilter,  } from "react-icons/fa";
+import { FaFingerprint, FaCamera, FaFilter,  FaBell } from "react-icons/fa";
+import { FaMoneyBillWave } from "react-icons/fa6";
 
 // 1. Define the Types
 export interface TechStackItem {
@@ -38,7 +42,7 @@ export const projectsData: Project[] = [
     title: "SafeQly",
     subtitle: "Fintech Infrastructure & Escrow API",
     category: "Fintech / B2B SaaS",
-    banner: "https://media.licdn.com/dms/image/v2/D4E22AQEd_6mx8wHOmg/feedshare-shrink_800/B4EZtPCBhOGoAg-/0/1766557491178?e=1768435200&v=beta&t=mHm5Eneyd9R34Ka4aUhFj3zgMA2lbV5eUEH_LdjM8T0",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855413/Screenshot_2026-08-04_at_15.55.47_pqnkpe.png",
     liveLink: "https://safeqly.com",
     repoLink: "https://github.com/au-lex?tab=repositories",
     client: "Internal Venture",
@@ -61,8 +65,115 @@ export const projectsData: Project[] = [
       "Robust Public API Architecture"
     ],
     gallery: [
-      "https://media.licdn.com/dms/image/v2/D4E22AQGAfQFE-EKU_Q/feedshare-shrink_800/B4EZtPCBg4HEAg-/0/1766557491179?e=1768435200&v=beta&t=oPSS77FtpnRI5d_kVAZ-dr8jhMqFBbnTpCdb1QoG7FI",
-      "https://media.licdn.com/dms/image/v2/D4E22AQFN1G1Gmvm4GQ/feedshare-shrink_800/B4EZtPCBhHKkAo-/0/1766557491184?e=1768435200&v=beta&t=CiWvibV1YfUeXPZD27oWxIQBYVBXdHPLlaux0LhtcRQ"
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855412/Screenshot_2026-08-04_at_15.56.13_dhojr3.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855412/Screenshot_2026-08-04_at_15.56.13_dhojr3.png"
+    ]
+  },
+
+    {
+    id: 12,
+    title: "Ledgefice",
+    subtitle: "Voucher & Vendor Management SaaS Platform",
+    category: "Fintech / B2B SaaS",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785854570/Screenshot_2026-08-04_at_15.41.22_kwoldu.png",
+    liveLink: "https://ledgefice.vercel.app",
+    repoLink: "https://github.com/au-lex?tab=repositories",
+    client: "Aulex Digital Solutions",
+    timeline: "Ongoing (Build in Public)",
+    role: "Founder & Lead Full Stack Engineer",
+    stack: [
+      { icon: SiGo, name: "Golang (Fiber)" },
+      { icon: SiPostgresql, name: "PostgreSQL (GORM)" },
+      { icon: SiReact, name: "React" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: FaMoneyBillWave, name: "Paystack / Nomba" },
+    ],
+    challenge: "Vendors and finance teams needed a way to issue, track, and reconcile vouchers across multiple tenants without spreadsheets or manual approval chains. The engineering challenge was building strict multi-tenant data isolation while still supporting flexible, per-organization voucher schemas — since every business tracks different voucher attributes. Billing was another hurdle: subscriptions needed to survive a live payment-provider migration (Nomba to Paystack) without disrupting active renewals or direct-debit mandates.",
+    solution: "I designed a dynamic voucher engine using an EAV (Entity-Attribute-Value) model so organizations can define custom voucher fields without schema changes. I built a 7-flag granular permission system and configurable multi-step approval chains on top of a strictly isolated multi-tenant Postgres schema (via GORM), including an immutable audit log and duplicate-detection logic. \n\nFor billing, I built the subscription, renewal, and dunning cron jobs in Go, then migrated the payment layer end-to-end from Nomba to Paystack — service layer, webhooks, subscription handlers, and the corresponding React hooks — while keeping the system live throughout.",
+    features: [
+      "Multi-Tenant Data Isolation with Row-Level Security",
+      "Dynamic Voucher Engine (EAV Model)",
+      "Configurable Multi-Step Approval Chains",
+      "7-Flag Granular Permission System",
+      "Immutable Audit Logging & Duplicate Detection",
+      "Subscription Billing with Automated Renewal & Dunning"
+    ],
+    gallery: [
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785854570/Screenshot_2026-08-04_at_15.42.27_bzd6pm.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785854570/Screenshot_2026-08-04_at_15.42.18_pidvxx.png"
+    ]
+  },
+
+
+
+
+  {
+    id: 13,
+    title: "PopsDaily",
+    subtitle: "Nigerian News Aggregator Mobile App",
+    category: "News / Mobile App",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855006/Screenshot_2026-08-04_at_15.49.24_ezr8mp.png",
+    liveLink: "https://drive.google.com/file/d/1-X_lYdol_XwZPDJiYD0r1GXf2mhC0RAY/view?usp=drive_link",
+    repoLink: "https://github.com/au-lex?tab=repositories",
+    client: "Personal Project",
+    timeline: "Build in Public",
+    role: "Founder & Lead Full Stack Engineer",
+    stack: [
+      { icon: SiFlutter, name: "Flutter" },
+      { icon: SiGo, name: "Golang (Fiber)" },
+      { icon: SiPostgresql, name: "PostgreSQL" },
+      { icon: FaBell, name: "Firebase Cloud Messaging" },
+    ],
+    challenge: "Nigerian news consumers, like my father, follow dozens of outlets scattered across different sites and apps, making it hard to keep up with breaking stories in one place. The technical challenge was building a reliable ingestion pipeline that could poll many RSS feeds from different Nigerian publishers, normalize inconsistent formats, extract clean readable article content, and surface it fast — all while keeping the mobile client lightweight and battery-friendly on push notifications.",
+    solution: "I built the backend in Go with a scheduled RSS polling system feeding a unified article store, exposing 39 REST endpoints for auth, bookmarks, search, and feed delivery. Article content is cleaned using go-readability so users get a distraction-free reading view regardless of source formatting. \n\nOn the client, I built the app in Flutter across multiple screens (feed, article detail, bookmarks, search) with full API integration, and wired up push notifications via Firebase Cloud Messaging so users get notified of breaking stories in real time.",
+    features: [
+      "Automated Multi-Source RSS Polling Engine",
+      "Clean Article Extraction (go-readability)",
+      "Bookmarks & Full-Text Search",
+      "Push Notifications for Breaking News (FCM)",
+      "39-Endpoint Go REST API",
+      "Cross-Screen Flutter Mobile Experience"
+    ],
+    gallery: [
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855005/Screenshot_2026-08-04_at_15.48.49_uryavt.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855000/Screenshot_2026-08-04_at_15.49.01_z4co2j.png",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855008/Screenshot_2026-08-04_at_15.49.09_iqlqca.png"
+    ]
+  },
+
+
+     {
+    id: 14,
+    title: "Product Thrive",
+    subtitle: "Full-Stack Product Store with End-to-End Test Coverage",
+    category: "E-commerce / Full-Stack Practice Build",
+    banner: "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855812/1781669352228_x2tof0.jpg",
+    liveLink: "https://github.com/au-lex/productList-uthrive",
+    repoLink: "https://github.com/au-lex/productList-uthrive",
+    client: "Personal Project",
+    timeline: "Shipped as a skills-refresh build",
+    role: "Full Stack Engineer",
+    stack: [
+      { icon: SiNodedotjs, name: "Node.js" },
+      { icon: SiExpress, name: "Express" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiReact, name: "React" },
+      { icon: SiJest, name: "Jest + Supertest" },
+      { icon: SiVitest, name: "Vitest + RTL" },
+    ],
+    challenge: "After spending a long stretch heads-down in Golang, I wanted to revisit Node.js and TypeScript to keep the muscle memory sharp rather than let it quietly rot. The real challenge wasn't just building a product store — it was building one properly: a clean REST API, a working cart/archive flow, and full unit + integration test coverage on both ends, the kind of production-ready workflow that's easy to skip on side projects.",
+    solution: "I built the backend with Node.js, Express, and TypeScript, covering product management, add-to-cart, delete, and archive actions, plus filtering by category, price range, and color. I wrote unit and integration tests with Jest and Supertest to lock in API behavior. \n\nOn the frontend, I built a React + TypeScript client with product list/detail views and full cart functionality, backed by unit tests using Vitest and React Testing Library. The whole exercise doubled as prep for a bigger 30-day public build coming next.",
+    features: [
+      "RESTful Product API (Express + TypeScript)",
+      "Cart, Delete & Archive Product Actions",
+      "Filtering by Category, Price Range & Color",
+      "Backend Test Suite (Jest + Supertest)",
+      "Frontend Test Suite (Vitest + React Testing Library)",
+      "Production-Style Full-Stack Workflow"
+    ],
+    gallery: [
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855814/1781669346814_eklplu.jpg",
+      "https://res.cloudinary.com/dmhvsyzch/image/upload/v1785855817/1781669339928_hlopmx.jpg"
     ]
   },
   {
@@ -353,5 +464,11 @@ export const projectsData: Project[] = [
       "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847598/Screenshot_20251018_204547_Expo_Go_hbhhmh.jpg",
       "https://res.cloudinary.com/dmhvsyzch/image/upload/v1766847589/Screenshot_20251011_000447_knvas_career_hub_crhj24.jpg",
     ]
-  }
+  },
+
+
+
+
+
+
 ];
